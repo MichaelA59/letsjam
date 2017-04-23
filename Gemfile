@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'dotenv'
 gem 'devise'
 gem 'foundation-rails'
+gem "font-awesome-rails"
+
 
 group :development do
   gem 'listen', '~> 3.0.5'
