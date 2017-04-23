@@ -5,7 +5,7 @@ class CreateTeachers < ActiveRecord::Migration[5.0]
       t.string  :last_name,  null: false
       t.string  :location,   null: false
       t.boolean :mobile,     null:false
-      t.text    :bio,        null: false
+      t.text    :bio        
 
       t.timestamps
     end

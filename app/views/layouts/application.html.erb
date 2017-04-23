@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
     <%= stylesheet_link_tag    "application" %>
@@ -12,6 +12,34 @@
   </head>
 
   <body>
+
+
+    <div class="top-bar">
+      <!-- Left Section of Nav Bar -->
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class='nav-logo'><%= link_to "Let's Jam", root_path %></li>
+        </ul>
+      </div>
+
+      <!-- Right Section of Nav Bar -->
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li class='right-links'><%= link_to 'Log In', new_user_session_path %></li>
+          <li class='right-links'><%= link_to 'Sign Up', new_user_registration_path %></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+
+
+
 
     <%= yield %>
 

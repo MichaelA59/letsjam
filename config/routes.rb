@@ -1,3 +1,20 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root'welcome#index'
+
+  resources :teachers do
+    resources :students
+  end
+
+  resources :teachers do
+    resources :instruments
+  end
+
+  resources :instruments
+
+  resources :students do
+    resources :instruments
+  end
+
+  devise_for :users
+
 end
