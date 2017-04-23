@@ -45,10 +45,11 @@ describe Student do
 
   it 'is not valid without a skill level' do
     mike = Student.new(
-      first_name: 'Michael'
+      first_name: 'Michael',
       last_name: 'Adamski',
       instrument: 'Guitar',
     )
 
     expect(mike.save).to eq(false)
   end
+end
