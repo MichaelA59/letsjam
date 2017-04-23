@@ -11,9 +11,9 @@ feature "Sign up" do
     fill_in 'First Name', with: 'John'
     fill_in 'Last Name', with: 'Smith'
     fill_in 'Email', with: 'bob@gmail.com'
-    fill_in 'Password', with: 'password123'
+    fill_in 'user_password', with: 'password123'
     fill_in 'Password Confirmation', with: 'password123'
-    click_button 'Sign Up'
+    click_button 'SIGN UP'
 
     expect(page).to have_content "Welcome, Let's Jam!"
     expect(page).to have_content "Sign Out"

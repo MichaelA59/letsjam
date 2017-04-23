@@ -1,6 +1,5 @@
-<div>
-<h2>Log in</h2>
-
+<h1 class='login-header'>Log In</h1>
+<div class='login-box'>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -22,7 +21,19 @@
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
+  <%= render "devise/shared/links" %>
 <% end %>
+
+
+
 </div>
 
-<%= render "devise/shared/links" %>
+
+
+<% if resource.errors.any? %>
+<ul>
+  <% resource.errors.full_messages.each do |error| %>
+  <li> <%= error %> </li>
+  <% end %>
+</ul>
+<% end %>
