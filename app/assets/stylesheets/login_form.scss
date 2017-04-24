@@ -12,7 +12,7 @@ $white: #ffffff;
 .login-header {
   font-family: Lobster;
   text-align: center;
-  top: 3%;
+  padding: 3% 0% 0% 0%;
 }
 
 *:focus {
@@ -81,4 +81,10 @@ input[type="submit"]:active {
   opacity: 1;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   transition: 0.1s ease;
+}
+
+.alert {
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 600;
 }

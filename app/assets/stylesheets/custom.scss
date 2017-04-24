@@ -45,15 +45,6 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  #content {
-    margin-top: -16px;
-    height: 66vh;
-    padding-bottom: 60px;
-    background: image-url('back.jpeg') no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-
   #footer {
     position:absolute;
     bottom: 0;
@@ -83,4 +74,13 @@ h1, h2, h3, h4, h5, h6 {
   right: 20%;
   text-shadow: 2px 2px 2px black;
   z-index: 10;
+}
+
+.filler-content {
+  margin-top: -16px;
+  height: 66vh;
+  padding-bottom: 60px;
+  background: image-url('back.jpeg') no-repeat;
+  background-position: center;
+  background-size: cover;
 }

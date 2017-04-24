@@ -3,46 +3,48 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
+
     <div id='container'>
-    <!-- Nav Bar -->
-    <div id='head'>
-    <div class="top-bar">
-      <!-- Left Section of Nav Bar -->
-      <div class="top-bar-left">
-        <ul class="dropdown menu" data-dropdown-menu>
-          <li class='nav-logo'><%= link_to "Let's Jam", root_path %></li>
-        </ul>
+      <!-- Nav Bar -->
+      <div id='head'>
+
+        <div class="top-bar">
+
+          <!-- Left Section of Nav Bar -->
+          <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu>
+              <li class='nav-logo'><%= link_to "Let's Jam", root_path %></li>
+            </ul>
+          </div>
+
+          <!-- Right Section of Nav Bar -->
+          <div class="top-bar-right">
+            <ul class="menu">
+              <li class='right-links'><%= link_to 'Log In', new_user_session_path %></li>
+              <li class='right-links'><%= link_to 'Sign Up', new_user_registration_path %></li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <!-- Right Section of Nav Bar -->
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li class='right-links'><%= link_to 'Log In', new_user_session_path %></li>
-          <li class='right-links'><%= link_to 'Sign Up', new_user_registration_path %></li>
-        </ul>
+      <!-- Container Div with YIELD -->
+      <div id='content'>
+        <!-- <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p> -->
+        <!-- YIELD -->
+        <%= yield %>
+      </div>
+
+      <!-- FOOTER Div Section -->
+      <div id='footer'>
+        <p class='footer-logo'>Let's Jam</p>
       </div>
     </div>
-    </div>
-
-    <div id='content'>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div>
-
-    <%= yield %>
-
-    <div id='footer'>
-      <p class='footer-logo'>Let's Jam</p>
-    </div>
-
-  </div>
   </body>
 </html>
