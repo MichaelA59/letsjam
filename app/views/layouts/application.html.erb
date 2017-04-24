@@ -11,7 +11,9 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-
+    <div id='container'>
+    <!-- Nav Bar -->
+    <div id='head'>
     <div class="top-bar">
       <!-- Left Section of Nav Bar -->
       <div class="top-bar-left">
@@ -28,15 +30,19 @@
         </ul>
       </div>
     </div>
+    </div>
 
+    <div id='content'>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+    <div id='content'>
 
-    <footer>
+    <div id='footer'>
       <p class='footer-logo'>Let's Jam</p>
-    </footer>
+    </div>
 
+  </div>
   </body>
 </html>
