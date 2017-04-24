@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 feature "Sign up" do
-    # As an unauthenticated user
-    # I would like to create a new account
-    # So that I can link up with musicians in my area
+  # As an unauthenticated user
+  # I would like to create a new account
+  # So that I can link up with musicians in my area
 
   scenario "Specifying valid and required information" do
     visit root_path
@@ -42,13 +42,12 @@ feature "Sign up" do
     fill_in 'Email', with: 'bob.billbob@gmail'
     click_button 'Sign Up'
 
-    expect(page).to have_content "Password is too short (minimum is 7 characters)"
+    expect(page).to have_content "Password is too short (minimum 7 characters)"
     expect(page).to have_content "Password confirmation doesn't match Password"
     expect(page).to have_content "Email is not a valid email address"
   end
 
   scenario "User gives email address that already has an account" do
-    user = FactoryGirl.create(:student)
 
     visit root_path
     click_link 'Sign Up'
