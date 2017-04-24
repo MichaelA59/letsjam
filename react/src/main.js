@@ -1,10 +1,11 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Layout from './components/Layout';
 
 $(function() {
   ReactDOM.render(
-    <h1 className='video-header'>Join the Band</h1>,
+    <Layout />,
     document.getElementById('app')
   );
 });
