@@ -34,6 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 
   #head {
     .top-bar {
+      border-bottom: 1px solid $low-opacity-white;
       .nav-logo {
         font-family: Lobster;
         font-size: 3.5em;
@@ -45,8 +46,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   #content {
-    padding: 10px;
+    margin-top: -16px;
+    height: 66vh;
     padding-bottom: 60px;
+    background: image-url('back.jpeg') no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 
   #footer {
@@ -68,25 +73,14 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-// #bg {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//
-//   /* Preserve aspet ratio */
-//   min-width: 100%;
-//   min-height: 100%;
-//   z-index: -10;
-// }
-//
-// .video-header {
-//   font-size: 4em;
-//   color: $white;
-//   text-align: center;
-//   position: absolute;
-//   top: 40%;
-//   left: 20%;
-//   right: 20%;
-//   text-shadow: 2px 2px 2px black;
-//   z-index: 10;
-// }
+.video-header {
+  font-size: 4em;
+  color: $white;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  right: 20%;
+  text-shadow: 2px 2px 2px black;
+  z-index: 10;
+}

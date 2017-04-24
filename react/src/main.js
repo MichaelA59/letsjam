@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 $(function() {
   ReactDOM.render(
-    <h1 className='video-header'>Join a Community of Musicians</h1>,
+    <h1 className='video-header'>Join the Band</h1>,
     document.getElementById('app')
   );
 });
