@@ -1,21 +1,27 @@
-<div class='filler-content'>
-  <!-- React Component -->
-  <div id='app'></div>
-  <section>
+<section class='test'>
+  <!-- Big parallax image up-top -->
+  <div class="parallax">
+    <div class='filler-content'>
+      <div class="row">
+        <% if user_signed_in? %>
+          <div id='question'> What is your Goal? </div>
+          <!-- 2 buttons (Learn / Teach) -->
+          <div id='homeChoice'></div>
+        <% else %>
+          <!-- Text = 'Join the Band' -->
+          <div id='app'/>
+          <!-- Bouncing Arrow leading to list of students / teachers -->
+          <div id='show'/>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- <p>
-      fidosfjnveorjrf90342iewofnw f io4enw fio4n3ew f43res
-      fidosfjnveorjrf90342iewofnw f io4enw fio4n3ew f43res
-      fidosfjnveorjrf90342iewofnw f io4enw fio4n3ew f43res
-      fidosfjnveorjrf90342iewofnw f io4enw fio4n3ew f43res
-      fidosfjnveorjrf90342iewofnw f io4enw fio4n3ew f43res
-      fidosfjnveorjrf90342iewofnw f io4enw fio4n3ew f43res
-      fidosfjnveorjrf90342iewofnw f io4enw fio4n3ew f43res
-      fidosfjnveorjrf90342iewofnw f io4enw fio4n3ew f43res
-      fidosfjnveorjrf90342iewofnw f io4enw fio4n3ew f43res
-      fidosfjnveorjrf90342iewofnw f io4enw fio4n3ew f43res
-      fidosfjnveorjrf90342iewofnw f io4enw fio4n3ew f43res
-    </p> -->
-  </section>
 
+
+<section>
+<div class="container">
+  <div class="row"></div>
 </div>
+</section>
