@@ -1,11 +1,23 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Layout from './components/Layout';
+import Header from './components/Header';
+import Choice from './components/Choice';
 
 $(function() {
-  ReactDOM.render(
-    <Layout />,
-    document.getElementById('app')
-  );
+  if(document.getElementById('app')) {
+    ReactDOM.render(
+      <Header />,
+      document.getElementById('app')
+    );
+  }
+});
+
+$(function() {
+    if (document.getElementById('homeChoice')) {
+    ReactDOM.render(
+      <Choice />,
+      document.getElementById('homeChoice')
+    );
+  }
 });
