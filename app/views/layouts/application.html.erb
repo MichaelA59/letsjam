@@ -4,48 +4,39 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    "application", media: 'all' %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => false %>
     <%= csrf_meta_tags %>
   </head>
   <body>
+  <!-- Nav Bar -->
+  <div class="top-bar">
 
-    <div id='container'>
-      <!-- Nav Bar -->
-      <div id='head'>
-
-        <div class="top-bar">
-
-          <!-- Left Section of Nav Bar -->
-          <div class="top-bar-left">
-            <ul class="dropdown menu" data-dropdown-menu>
-              <li class='nav-logo'><%= link_to "Let's Jam", root_path %></li>
-            </ul>
-          </div>
-
-          <!-- Right Section of Nav Bar -->
-          <div class="top-bar-right">
-            <ul class="menu">
-              <li class='right-links'><%= link_to 'Log In', new_user_session_path %></li>
-              <li class='right-links'><%= link_to 'Sign Up', new_user_registration_path %></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Container Div with YIELD -->
-      <div id='content'>
-        <!-- <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p> -->
-        <!-- YIELD -->
-        <%= yield %>
-      </div>
-
-      <!-- FOOTER Div Section -->
-      <div id='footer'>
-        <p class='copyright'>Copyright © Let's Jam</p>
-        <p class='footer-logo'>Let's Jam</p>
-      </div>
+    <!-- Left Section of Nav Bar -->
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class='nav-logo'><%= link_to "Let's Jam", root_path %></li>
+      </ul>
     </div>
+
+    <!-- Right Section of Nav Bar -->
+    <div class="top-bar-right">
+      <ul class="menu">
+        <!-- Conditional for user signed in or not -->
+        <li class="notice"><%= notice %></li>
+        <li class="alert"><%= alert %></li>
+        <% if user_signed_in? %>
+          <li class='right-links'><%= link_to "Signed In As #{current_user.first_name}", user_path(current_user)%></li>
+          <li class='right-links'><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
+        <% else %>
+          <li class='right-links'><%= link_to 'Log In', new_user_session_path %></li>
+          <li class='right-links'><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+    <%= yield %>
+
   </body>
 </html>

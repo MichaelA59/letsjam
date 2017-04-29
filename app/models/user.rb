@@ -1,18 +1,14 @@
 class User < ApplicationRecord
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true, email: true,
+    uniqueness: { message: "An account already exists for that email address!" }
+
+  has_many :students
+  has_many :teachers
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
-  validates :username, presence: true
-  validates :username, uniqueness: {
-     message: "An account already exists for that username!"
-   }
-
-   validates :email, presence: true
-   validates :email, email: true
-   validates :email, uniqueness: {
-     message: "An account already exists for that email address!"
-   }
-
+    :recoverable, :rememberable, :trackable, :validatable
 end
