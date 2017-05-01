@@ -28,7 +28,7 @@ require 'rails_helper'
     click_button 'Sign Up'
 
     expect(page).to have_content("Welcome! You have signed up successfully.")
-    expect(page).to have_content("Signed In As John")
+    expect(page).to have_content("My Profile")
     expect(current_path).to eq '/'
     expect(page).to_not have_content('Log In')
     expect(page).to_not have_content('Sign Up')
@@ -77,80 +77,77 @@ require 'rails_helper'
   # end
 end
 
-# feature "sign in" do
-#   # As an unauthenticated user
-#   # I want to sign in
-#   # So that I can find students to teach or instrucors to  learn from
-#
-#   let(:user) { FactoryGirl.create(:user) }
-#
-#   scenario "sees and clicks login link from homepage" do
-#
-#     visit root_path
-#
-#     click_link 'Log In'
-#
-#     expect(page).to have_content("Log In")
-#     expect(current_path).to eq '/users/sign_in'
-#   end
-#
-#   scenario "fills in account details and submits" do
-#     visit root_path
-#     click_link 'Log In'
-#
-#     fill_in 'Email', with: user.username
-#     fill_in 'Password', with: user.password
-#
-#     click_button "Log in"
-#
-#     expect(page).to have_content("Signed in successfully.")
-#     expect(current_path).to eq '/'
-#     expect(page).to_not have_content("Sign in")
-#     expect(page).to_not have_content("Create Account")
-#   end
+feature "sign in" do
+  # As an unauthenticated user
+  # I want to sign in
+  # So that I can find students to teach or instrucors to  learn from
 
 
+  scenario "sees and clicks login link from homepage" do
 
-#   scenario "user gives email without an account" do
-#     visit root_path
-#     click_link 'Sign In'
-#     fill_in 'Email', with: 'brianna.billbob@gmail.com'
-#     fill_in 'Password', with: 'password123'
-#     click_button 'Sign In'
-#
-#     expect(page).to have_content "We could not find your email!"
-#     expect(page).to have_content "Please reenter or create an account."
-#   end
-#
-#   scenario "user enters incorrect password" do
-#     user = FactoryGirl.create(:user)
-#
-#     visit root_path
-#     click_link 'Sign In'
-#     fill_in 'Email', with: user.email
-#     fill_in 'Password', with: 'wrongpassword'
-#     click_button 'Sign In'
-#
-#     expect(page).to have_content "Sorry! Wrong password. Please try again!"
-#   end
-# end
-#
-# feature "sign out" do
-#   # As an authenticated user
-#   # I want to sign out
-#   # So that no one else can post venues or reviews on my behalf
-#
-#   scenario "successful sign out" do
-#     user = FactoryGirl.create(:user)
-#
-#     visit root_path
-#     click_link 'Sign In'
-#     fill_in 'Email', with: user.email
-#     fill_in 'Password', with: user.password
-#     click_button 'Sign In'
-#
-#     click_link "Sign Out"
-#
-#     expect(page).to have_content "You have been signed out"
-#   end
-# end
+    visit root_path
+
+    click_link 'Log In'
+
+    expect(page).to have_content("Log In")
+    expect(current_path).to eq '/users/sign_in'
+  end
+
+  scenario "fills in account details and submits" do
+    user = FactoryGirl.create(:user)
+
+    visit root_path
+    click_link 'Log In'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button "Log in"
+
+    expect(page).to have_content("Signed in successfully.")
+    expect(current_path).to eq '/'
+    expect(page).to_not have_content("Sign in")
+    expect(page).to_not have_content("Create Account")
+  end
+
+
+  scenario "user gives email without an account" do
+    visit root_path
+    click_link 'Log In'
+    fill_in 'Email', with: 'brianna.billbob@gmail.com'
+    fill_in 'Password', with: 'password123'
+    click_button 'Log in'
+
+    expect(page).to have_content "Invalid Email or password."
+  end
+
+  scenario "user enters incorrect password" do
+    user = FactoryGirl.create(:user)
+
+    visit root_path
+    click_link 'Log In'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: 'wrongpassword'
+    click_button 'Log in'
+
+    expect(page).to have_content "Invalid Email or password."
+  end
+end
+
+feature "sign out" do
+  # As an authenticated user
+  # I want to sign out
+  # So that no one else can post venues or reviews on my behalf
+
+  scenario "successful sign out" do
+    user = FactoryGirl.create(:user)
+
+    visit root_path
+    click_link 'Log In'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
+
+    click_link "Sign Out"
+
+    expect(page).to have_content "Signed out successfully."
+  end
+end
