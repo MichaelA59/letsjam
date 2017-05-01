@@ -39,6 +39,9 @@
       <%= f.radio_button :is_student, false %>
       <%= f.label :is_student, "Teacher", value: false %>
 
+      <%= f.file_field :profile_photo %>
+      <%= f.input :profile_photo, type: :file %>
+
 
       <div class='form-actions'>
         <%= f.submit "Sign Up" %>

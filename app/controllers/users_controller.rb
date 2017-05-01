@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :authorize_user
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
 
   def index
     # @users = current_user
@@ -42,6 +44,10 @@ class UsersController < ApplicationController
     if !user_signed_in?
       raise ActionController::RoutingError.new("Please Log in to view this page")
     end
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :profile_photo
   end
 
 end
