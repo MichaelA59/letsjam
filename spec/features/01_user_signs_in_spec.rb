@@ -28,7 +28,7 @@ require 'rails_helper'
     click_button 'Sign Up'
 
     expect(page).to have_content("Welcome! You have signed up successfully.")
-    expect(page).to have_content("Signed In As John")
+    expect(page).to have_content("My Profile")
     expect(current_path).to eq '/'
     expect(page).to_not have_content('Log In')
     expect(page).to_not have_content('Sign Up')
