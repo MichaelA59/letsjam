@@ -30,4 +30,4 @@ app has foremost been focused on user experience and tailoring the flow of the
 app to be more inline with the needs of a creative community.
 
 To that end, the majority of the front-end was completed using React. I chose React
-for its smooth 
+for its smooth
