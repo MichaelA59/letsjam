@@ -18,9 +18,9 @@ $input-text-color: #092c44;
 
 .login-signup-box {
   position: relative;
-  margin: 5% auto;
+  margin: 3% auto;
   width: 800px;
-  height: 650px;
+  height: 725px;
   background: #FFF;
   border-radius: 2px;
   border: 1px solid $subtle-card-outline;
@@ -95,7 +95,7 @@ input[type="submit"]:active {
 
 .or {
   position: absolute;
-  top: 300px;
+  top: 310px;
   left: 380px;
   width: 40px;
   height: 40px;
@@ -114,9 +114,9 @@ input[type="submit"]:active {
   box-sizing: border-box;
   padding: 40px;
   width: 400px;
-  height: 650px;
+  height: 725px;
   background: url('https://reverb-res.cloudinary.com/image/upload/s--0TJ8QoiW--/a_exif,c_limit,f_auto,fl_progressive,g_south,q_auto:eco,w_400/v1409679814/zjwlediy4tiaywc00qht.jpg');
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   border-radius: 0 2px 2px 0;
 }
