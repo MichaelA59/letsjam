@@ -1,9 +1,17 @@
 require 'rails_helper'
 
-feature "Sign up" do
   # As an unauthenticated user
   # I would like to create a new account
   # So that I can link up with musicians in my area
+  feature "user creates account" do
+    scenario "sees and clicks on Sign Up button from main page" do
+      visit root_path
+
+      click_link "Sign Up"
+
+      expect(current_path).to eq '/users/sign_up'
+      expect(page).to_not have_content("Sign Out")
+    end
 
   scenario "Specifying valid and required information" do
     visit root_path
@@ -14,24 +22,28 @@ feature "Sign up" do
     fill_in 'Email', with: 'bob@gmail.com'
     fill_in 'Password', with: 'password123'
     fill_in 'Password Confirmation', with: 'password123'
+    fill_in 'Zip Code', with: '01108'
+    choose('Student')
+
     click_button 'Sign Up'
 
-    expect(page).to have_content "Welcome, Let's Jam!"
-    expect(page).to have_content "Sign Out"
-    expect(page).not_to have_content "Sign In"
-    expect(page).not_to have_content "Sign Up"
+    expect(page).to have_content("Welcome! You have signed up successfully.")
+    expect(page).to have_content("Signed In As John")
+    expect(current_path).to eq '/'
+    expect(page).to_not have_content('Log In')
+    expect(page).to_not have_content('Sign Up')
   end
 
-  scenario "User omits required information" do
-    visit root_path
-    click_link 'Sign Up'
-    click_button 'Sign Up'
-
-    expect(page).to have_content "First name can't be blank"
-    expect(page).to have_content "Last name can't be blank"
-    expect(page).to have_content "Password can't be blank"
-    expect(page).to have_content "Email can't be blank"
-  end
+  # scenario "User omits required information" do
+  #   visit root_path
+  #   click_link 'Sign Up'
+  #   click_button 'Sign Up'
+  #
+  #   expect(page).to have_content "First name can't be blank"
+  #   expect(page).to have_content "Last name can't be blank"
+  #   expect(page).to have_content "Password can't be blank"
+  #   expect(page).to have_content "Email can't be blank"
+  # end
 
   # scenario "User gives invalid information" do
   #   visit root_path
@@ -65,26 +77,40 @@ feature "Sign up" do
   # end
 end
 
-feature "sign in" do
-  # As an unauthenticated user
-  # I want to sign in
-  # So that I can find students to teach or instrucors to  learn from
-
-  scenario "user signs in successfully" do
-    user = FactoryGirl.create(:student)
-
-    visit root_path
-    click_link 'Sign In'
-    fill_in 'Email', with: student.email
-    fill_in 'Password', with: student.password
-    click_button 'Sign In'
-
-    expect(page).to have_content "Welcome back! You are signed in successfully."
-    expect(page).not_to have_content "Sign Up"
-    expect(page).not_to have_content "Sign In"
-    expect(page).to have_content "Sign Out"
-  end
+# feature "sign in" do
+#   # As an unauthenticated user
+#   # I want to sign in
+#   # So that I can find students to teach or instrucors to  learn from
 #
+#   let(:user) { FactoryGirl.create(:user) }
+#
+#   scenario "sees and clicks login link from homepage" do
+#
+#     visit root_path
+#
+#     click_link 'Log In'
+#
+#     expect(page).to have_content("Log In")
+#     expect(current_path).to eq '/users/sign_in'
+#   end
+#
+#   scenario "fills in account details and submits" do
+#     visit root_path
+#     click_link 'Log In'
+#
+#     fill_in 'Email', with: user.username
+#     fill_in 'Password', with: user.password
+#
+#     click_button "Log in"
+#
+#     expect(page).to have_content("Signed in successfully.")
+#     expect(current_path).to eq '/'
+#     expect(page).to_not have_content("Sign in")
+#     expect(page).to_not have_content("Create Account")
+#   end
+
+
+
 #   scenario "user gives email without an account" do
 #     visit root_path
 #     click_link 'Sign In'
@@ -127,4 +153,4 @@ feature "sign in" do
 #
 #     expect(page).to have_content "You have been signed out"
 #   end
-end
+# end

@@ -5,29 +5,40 @@
   <div class="left">
       <%= f.label :first_name, "First Name" %>
       <%= f.text_field :first_name, autofocus: true %>
-      <p class='error'><%= show_errors(resource, 'First name') %></p>
+      <!-- <p class='error'><%= show_errors(resource, 'First name') %></p> -->
 
       <%= f.label :last_name, "Last Name" %>
       <%= f.text_field :last_name %>
-      <p class='error'><%= show_errors(resource, 'Last name') %></p>
+      <!-- <p class='error'><%= show_errors(resource, 'Last name') %></p> -->
 
       <%= f.label :username, "Username" %>
       <%= f.text_field :username %>
-      <p class='error'><%= show_errors(resource, 'Username') %></p>
+      <!-- <p class='error'><%= show_errors(resource, 'Username') %></p> -->
 
-      <%= f.label :email %>
+      <%= f.label :email, "Email" %>
       <%= f.email_field :email %>
-      <p class='error'><%= show_errors(resource, 'Email') %></p>
+      <!-- <p class='error'><%= show_errors(resource, 'Email') %></p> -->
 
       <%= f.label :password %>
       <!-- <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br /> -->
       <%= f.password_field :password, autocomplete: "off" %>
-      <p class='error'><%= show_errors(resource, 'Password') %></p>
+      <!-- <p class='error'><%= show_errors(resource, 'Password') %></p> -->
 
       <%= f.label :password_confirmation, "Password Confirmation" %>
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
+
+      <%= f.label :zip, "Zip Code" %>
+      <%= f.text_field :zip, autocomplete: "off" %>
+      <!-- <p class='error'><%= show_errors(resource, 'Zip Code') %></p> -->
+
+      <%= f.radio_button :is_student, true %>
+      <%= f.label :is_student, "Student", value: true %>
+
+      <%= f.radio_button :is_student, false %>
+      <%= f.label :is_student, "Teacher", value: false %>
+
 
       <div class='form-actions'>
         <%= f.submit "Sign Up" %>
@@ -39,7 +50,7 @@
 
 <!-- RIGHT SIDE FORM -->
     <div class="right">
-      <span class="loginwith">Sign in with<br />social network</span>
+      <span class="loginwith">Sign in with<br />Social Media</span>
 
       <button class="social-signin facebook">Log in with facebook</button>
       <button class="social-signin twitter">Log in with Twitter</button>
