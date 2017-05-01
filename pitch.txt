@@ -11,9 +11,11 @@ I saw that your company is doing _____ and I’d love to learn more about some p
 
 
 Hello, my name is Mike Adamski. I'm really excited to speak with you today. Along
-with being a budding programmer I have also been a self-taught musicians
+with being a budding programmer I have also been a self-taught musician
 for the last 10 years. In that time I have also been an instructor to as many as
 12 students, teaching multiple instruments.
+
+> !!! Don't focus on money !!!
 
 Unfortunately, music doesn't pay as well as I would have liked, so for the past
 few years I have been searching out a career path that fulfills my curiosity
@@ -30,4 +32,13 @@ app has foremost been focused on user experience and tailoring the flow of the
 app to be more inline with the needs of a creative community.
 
 To that end, the majority of the front-end was completed using React. I chose React
-for its smooth
+because of its popularity, capabilities and smooth user experience.
+
+The backend was completed using Rails and ActiveRecord
+
+
+
+
+> more background  (was 37 seconds)
+> more breakable toy stuff (add challenges and how i resolved them)
+> Closing is decent (what im looking for)

@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @students = @user.students
+    # @students = @user.students
   end
 
   def edit
