@@ -2,12 +2,13 @@ class UsersController < ApplicationController
   before_action :authorize_user
 
   def index
-    @users = current_user
-    if @user.is_student?
-      @users = User.where(is_student: false)
-    else
-      @users = User.where(is_student: true)
-    end
+    # @users = current_user
+    # if @user.is_student?
+    #   @users = User.where(is_student: true)
+    # else
+    #   @users = User.where(is_student: false)
+    # end
+    @users = User.all
   end
 
   def show
