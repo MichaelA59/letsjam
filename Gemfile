@@ -28,6 +28,7 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'coveralls', require: false
   gem 'faker'
+  gem 'faker'
 end
 
 group :production do
