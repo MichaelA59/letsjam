@@ -1,3 +1,33 @@
-Hello, my name is Mike Adamski and I am incredibly excited to talk to you
-today about an app I created over the last 2 weeks called, Let's Jam. But
-before I get into that I want to give you some background.
+My Name
+My prior life (if value add)/Differentiator
+1-2 things I like to do in my personal life
+Your career goal (1 sentence)
+I took a course in web development and have gain these _____tech skills
+My tech community involvement includes _____
+I chose to build my capstone project because _____ and here’s what it does _____. The features I included are _____ and the challenges I faced were _____. I learned _____ while building it
+I’d like to work for a company that _____
+I saw that your company is doing _____ and I’d love to learn more about some problems you are solving to deliver that product/service
+
+
+
+Hello, my name is Mike Adamski. I'm really excited to speak with you today. Along
+with being a budding programmer I have also been a self-taught musicians
+for the last 10 years. In that time I have also been an instructor to as many as
+12 students, teaching multiple instruments.
+
+Unfortunately, music doesn't pay as well as I would have liked, so for the past
+few years I have been searching out a career path that fulfills my curiosity
+for artistic creation and my penchant for logical problem solving. That's
+when I found Launch Academy.
+
+Using the skills I have learned over the last 10 weeks here at Launch, I have been
+able to create an app that solves a problem I have faced in the past - namely, finding
+students to teach.
+
+My application is called Let's Jam and it links up students in search of music
+instructors with Teachers both locally and remote. My approach to building this
+app has foremost been focused on user experience and tailoring the flow of the
+app to be more inline with the needs of a creative community.
+
+To that end, the majority of the front-end was completed using React. I chose React
+for its smooth 
