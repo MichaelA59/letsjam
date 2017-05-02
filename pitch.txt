@@ -10,12 +10,98 @@ I saw that your company is doing _____ and I’d love to learn more about some p
 
 
 
+
+
+Hi, my name is Mike Adamski. I am 29 years old, I'm from Western Mass and I can
+confidently say to you all today that, in programming - I have finally found my dream job.
+
+Apart from being a developer I'm also a self-taught musician. This has exposed me
+to a world of creation and collaboration. I've seen first hand how passion alone
+can yield tremendous growth.
+
+The same passion that propelled my growth in music is now being utilized here at Launch.
+Being a developer affords me the ability to use creative ways to solve problems.
+It also relies heavily on collaboration and communication between team-members, a
+skill I have cultivated over the years.
+
+With code, I'm able to take an idea and make it a reality. For my capstone project,
+I decided to tackle a problem I faced when working freelance as a music instructor.
+
+I had the skills to teach and word of mouth certainly helped with my business but
+I always felt like there should be an easier way for students to connect with teachers.
+So I created Let's Jam.
+
+My app is a meeting place for teachers and students alike to connect. Upon signing
+up for an account, a user can specify a Teacher or Student designation. They can also
+sign up for an account using LinkedIn, Google or Facebook.
+
+There are 2 types of lessons available to students. In-Person and Remote. Users
+are asked specify a location and a preference for online instruction.
+
+Students are able to search for instructors in their area using the Google API. They
+can also do a search for all instructors offering online-learning. When a Student
+and Teacher connect for an online learning experience, a Zoom video chat link will
+be automatically generated and sent to both the Student and Teacher via Email.
+
+Learning an instrument is a long-term commitment and you wouldn't want to learn from
+someone unless they were well vetted. To solve this, I have allowed students
+the ability to rate Teachers on a variety of metrics, including things like clarity
+of instruction and competence.
+
+To make it easier on new students, Instructors with music degrees will receive a star
+that will be displayed on both their profile and the index page. This is verified
+using the LinkedIn API.
+
+The backend of my app was created using Rails with ActiveRecord. On the front end
+I chose to use React and I did so for a few reasons. First, it was the one area I
+struggled with most during my time at Launch and secondly, I recognized the potential
+that exists with this technology. I really wanted a smooth user experience that would
+be fully engaging. React allowed me to to make transitions to different content
+something that felt natural rather than forced.
+
+This project was a labor of love that solved a problem I encountered before knowing
+anything about coding. I look forward to joining a team that encourages learning
+and experimentation above all else. I believe my natural aptitude lies in the front-end
+and hope to find an employer that would be willing to allow me, in my spare time,
+to tinker around with design and User Experience.
+
+Again, my name is Mike Adamski and I would like to thank you for you time this morning.
+
+
+
+
+
+
+
+2.39 total
+49 sec for personal story
+
+why i chose react - shorten the tech part of react
+reword part about tinkering at the end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Hello, my name is Mike Adamski. I'm really excited to speak with you today. Along
-with being a budding programmer I have also been a self-taught musician
+with being a newly minted web developer, I have also been a self-taught musician
 for the last 10 years. In that time I have also been an instructor to as many as
 12 students, teaching multiple instruments.
-
-> !!! Don't focus on money !!!
 
 Unfortunately, music doesn't pay as well as I would have liked, so for the past
 few years I have been searching out a career path that fulfills my curiosity
