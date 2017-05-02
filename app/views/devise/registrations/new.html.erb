@@ -39,6 +39,7 @@
       <%= f.radio_button :is_student, false %>
       <%= f.label :is_student, "Teacher", value: false %>
 
+      <%= f.file_field :profile_photo %>
 
       <div class='form-actions'>
         <%= f.submit "Sign Up" %>
@@ -58,4 +59,7 @@
     </div>
 <!-- END RIGHT SIDE FORM -->
   <% end %>
+
+  <!-- <%= devise_error_messages! %> -->
+
 </div>

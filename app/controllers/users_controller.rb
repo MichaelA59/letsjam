@@ -1,13 +1,16 @@
 class UsersController < ApplicationController
   before_action :authorize_user
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
 
   def index
-    @users = current_user
-    if @user.is_student?
-      @users = User.where(is_student: false)
-    else
-      @users = User.where(is_student: true)
-    end
+    # @users = current_user
+    # if @user.is_student?
+    #   @users = User.where(is_student: true)
+    # else
+    #   @users = User.where(is_student: false)
+    # end
+    @users = User.all
   end
 
   def show
@@ -32,8 +35,10 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :email, :is_student, :zip, :mobile, :about_me)
+    params.require(:user).permit(:first_name, :last_name, :username, :email, :is_student, :zip, :mobile, :about_me, :profile_photo)
   end
+
+# :profile_photo
 
   protected
 
@@ -41,6 +46,10 @@ class UsersController < ApplicationController
     if !user_signed_in?
       raise ActionController::RoutingError.new("Please Log in to view this page")
     end
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :profile_photo
   end
 
 end

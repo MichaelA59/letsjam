@@ -10,6 +10,7 @@ gem 'dotenv'
 gem 'devise'
 gem 'foundation-rails'
 gem "font-awesome-rails"
+gem "carrierwave"
 
 
 group :development do

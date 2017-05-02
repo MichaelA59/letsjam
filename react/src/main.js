@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/Header';
 import Choice from './components/Choice';
+import StudentIndexContainer from './containers/StudentIndexContainer';
 
 $(function() {
   if(document.getElementById('app')) {
@@ -20,4 +21,11 @@ $(function() {
       document.getElementById('homeChoice')
     );
   }
+});
+
+$(function() {
+  ReactDOM.render(
+    <StudentIndexContainer />,
+    document.getElementById('students-index')
+  );
 });
