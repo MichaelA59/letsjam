@@ -2,9 +2,9 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Student = (props) => {
+const User = (props) => {
   return(
-    <div>
+    <div className='columns small-12 med-4 text-center'>
       <h1>
       {props.username}
       </h1>
@@ -18,4 +18,4 @@ const Student = (props) => {
   )
 }
 
-export default Student;
+export default User;
