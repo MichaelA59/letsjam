@@ -20,6 +20,3 @@ const Choice = (props) => {
   }
 
 export default Choice;
-
-
-<a href="http://server/page.html#anchor-name">Link text</a>

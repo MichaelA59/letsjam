@@ -1,7 +1,3 @@
-// App (This component) will be responsible for rendering 2 things
-// First: The container (UserIndexContainer)
-
-
 import React, { Component } from 'react';
 import Choice from './components/Choice'
 import Header from './components/Header'
@@ -17,11 +13,6 @@ class App extends Component {
     this.handleChangeUserTypeTeacher = this.handleChangeUserTypeTeacher.bind(this)
   }
 
-  // put state here
-  // create function that is passed to Choice as props
-  // when button is clicked, function triggered to update userType
-  // pass updated userType to StudentIndexContainer as props
-
   handleChangeUserTypeStudent() {
     this.setState({ userType: true})
   }
@@ -36,13 +27,6 @@ class App extends Component {
     let onButtonClick = () => {
       this.handleChangeUserType()
     }
-
-  // if this.state.userType = null
-  //   mainPage = ""
-  // elsif this.state.userType = "student"
-  //   mainPage = <StudentContainer ... >
-  // elsif this.state.userType = "teacher"
-  //   mainPage = <TeacherContainer >
 
   return (
     <div>
@@ -60,13 +44,9 @@ class App extends Component {
 
       <section>
         <div className="container">
-          <div className="row">
-            <div className='columns small-12 med-4'>
-              <UserIndexContainer
-                userType={this.state.userType}
-               />
-            </div>
-          </div>
+            <UserIndexContainer
+              userType={this.state.userType}
+             />
         </div>
       </section>
     </div>

@@ -20,30 +20,24 @@ class UserIndexContainer extends Component {
 
   componentDidMount() {
     this.displayListOfUsers();
-
   }
-
-  // 1. Clicking button needs to update state of the "userType" (on which component?)
-  // 2. This updated state needs to be passed into StudentIndexContainer
-  // 3. Filter the userList based on the "userType"
-  // 4. Map the filtered list into User components
 
   render() {
 
     let userType = this.props.userType
 
     let filteredUsers = this.state.users.filter(function(user) {
-      return user.is_student == userType
+      return user.is_student !== userType
     })
 
     let users = filteredUsers.map (user => {
-
       return(
         <User
           key={user.id}
           id={user.id}
           first_name={user.first_name}
           last_name={user.last_name}
+          photo={user.profile_photo}
           email={user.email}
           username={user.username}
           zip={user.zip}
@@ -54,13 +48,26 @@ class UserIndexContainer extends Component {
       )
     })
 
+    let userListHeader = ''
+
+    if (userType == true) {
+      userListHeader = 'Available Students'
+    }
+    else {
+      userListHeader = 'Available Teachers'
+    }
+
     return(
-      <div id='users-list'>
-        {users}
+      <div>
+        <div>
+          <h1 id='users-list'>{userListHeader}</h1>
+        </div>
+        <div className='row small-up-1 medium-up-2 large-up-3'>
+          {users}
+        </div>
       </div>
     )
   }
 }
-
 
 export default UserIndexContainer;
