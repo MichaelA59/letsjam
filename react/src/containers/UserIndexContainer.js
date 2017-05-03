@@ -49,13 +49,14 @@ class UserIndexContainer extends Component {
           zip={user.zip}
           mobile={user.mobile}
           about_me={user.about_me}
+          userType={userType}
         />
       )
     })
 
     return(
       <div id='users-list'>
-      {users}
+        {users}
       </div>
     )
   }
