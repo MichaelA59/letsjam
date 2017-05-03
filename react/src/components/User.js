@@ -6,7 +6,7 @@ const User = (props) => {
   return(
     <div className='columns small-12 med-4 text-center'>
       <h1>
-      {props.username}
+        {props.username}
       </h1>
       {props.first_name}
       {props.last_name}
