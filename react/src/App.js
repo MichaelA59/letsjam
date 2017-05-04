@@ -33,7 +33,7 @@ class App extends Component {
       <section className='test'>
         <div className='parallax'>
           <div className='filler-content'>
-            <div id='question'> What is your Goal? </div>
+            <div id='question'> Connecting Teachers & Talent </div>
             <Choice
               onButtonClickStudent={this.handleChangeUserTypeStudent}
               onButtonClickTeacher={this.handleChangeUserTypeTeacher}
