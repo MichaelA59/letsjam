@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lobster|Open+Sans|Montserrat|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Open+Sans|Montserrat|Raleway|Merriweather:300,400,700|Montserrat:400,500,600,700');
 @import "login_form";
 @import "signup_form";
 @import "parallax_head";
@@ -32,15 +32,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .top-bar {
-  border-bottom: 1px solid $low-opacity-white;
+  border-bottom: 1px solid rgba(84,84,84,.19);
   height: 6em;
+  background-color: transparent;
+
   .nav-logo {
     font-family: Lobster;
     font-size: 3em;
     line-height: 3em;
     vertical-align: center;
+    background-color: transparent;
   }
   .top-bar-right {
     padding: 1em;
+    background-color: transparent;
   }
 }
