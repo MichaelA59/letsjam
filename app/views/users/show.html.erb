@@ -16,9 +16,26 @@
 
 <section>
   <div class='row'>
+    <%= link_to 'Edit Profile', edit_user_path(@user) %>
+  </div>
+  <div class='row'>
     <div class='columns small-12 medium-6'>
       <!-- React component for all of teacher created lessons -->
       <div id='teacher-lessons'/>
+    </div>
+
+    <div class='columns small-12 medium-6 small-centered'>
+      <img src="<%= @user.profile_photo %>" alt="User Profile Picture" width="300px" height="auto"/>
+
+      <h1> Username: </h1><h3><%= @user.username %></h3>
+
+      <h1> Email: </h1><h3><%= @user.email %></h3>
+
+      <% if @user.about_me %>
+        <h1> About Me </h1>
+        <p><%= @user.about_me %></p>
+      <% end %>
+
     </div>
   </div>
 </section>
