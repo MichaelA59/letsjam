@@ -67,11 +67,19 @@ Again, my name is Mike and I would like to thank you for you time this morning.
 
 
 
+2.23
+
+coming in to strong and trailing off at the end  (mumbling at the end )
+
+
+
+
+
 > 2.14
 > Trim a little bit
-> Technical buzzword stuff (Think abotu why i chose to use React (challenges and all))
+> Technical buzzword stuff (Think about why i chose to use React (challenges and all))
 > Take out some react stuff
-> Dont talk about obvious stuff like React being this snappy front end thing
+> Don't talk about obvious stuff like React being this snappy front end thing
 
 
 

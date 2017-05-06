@@ -13,6 +13,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :tutorships
+  has_many :lessons, through: :tutorships
+  has_many :teacher_lessons, class_name: "Lesson", foreign_key: "teacher_id"
+
   def is_teacher?
     !is_student?
   end

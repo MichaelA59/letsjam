@@ -7,12 +7,12 @@ const Choice = (props) => {
       <div>
         <div className='row choice-container'>
           <div className="button small-6 small-centered columns" onClick={props.onButtonClickStudent}>
-            <a href='#users-list'>I want to Learn</a>
+            <a href='#users-list'>I want to learn</a>
           </div>
         </div>
         <div className='row choice-container'>
           <div className= "button small-6 small-centered columns" onClick={props.onButtonClickTeacher}>
-            <a href='#users-list'>I want to Teach</a>
+            <a href='#users-list'>I want to teach</a>
           </div>
         </div>
       </div>
