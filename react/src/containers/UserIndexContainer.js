@@ -51,10 +51,10 @@ class UserIndexContainer extends Component {
     let userListHeader = ''
 
     if (userType == true) {
-      userListHeader = 'Available Students'
+      userListHeader = 'Available Teachers'
     }
     else {
-      userListHeader = 'Available Teachers'
+      userListHeader = 'Available Students'
     }
 
     return(
