@@ -1,41 +1,51 @@
-<section class='profileHeader'>
+<section class='test'>
+  <div class='profileHeader'>
+    <div class='profileText'>
 
-    <div class='row profile-name-parallax-display'>
-      <div class='columns small-12 text-center'>
-        <h1><%= @user.username %></h1>
-      </div>
+      <h1><%= @user.username %></h1>
+
+      <!-- <div class='row arrow-thingy'> -->
+        <div class='arrow text-center animated bounce'>
+          <a href='#profile-photo'><%= image_tag "arrow.png" %></a>
+        </div>
+      <!-- </div> -->
+
     </div>
-
-    <div class='row arrow-thingy'>
-      <div class='column small-12 text-center animated bounce'>
-        <a href='#profile-photo'><%= image_tag "arrow.png" %></a>
-      </div>
-    </div>
-
+  </div>
 </section>
 
+
 <section>
-  <div class='row'>
-    <%= link_to 'Edit Profile', edit_user_path(@user), class: 'button' %>
-  </div>
-  <div class='row expanded'>
-    <div class='columns small-12 medium-6'>
-      <!-- React component for all of teacher created lessons -->
-      <div id='teacher-lessons'/>
+  <div class='container'>
+    <div class='row'>
+      <%= link_to 'Edit Profile', edit_user_path(@user), class: 'button' %>
     </div>
 
-    <div class='columns small-12 medium-6 small-centered'>
-      <% if @user.profile_photo %>
-        <img id='profile-photo' src="<%= @user.profile_photo %>" alt="User Profile Picture" width="300px" height="auto"/>
-      <% end %>
-      <h1> Username: </h1><h3><%= @user.username %></h3>
+    <div class='row'>
 
-      <h1> Email: </h1><h3><%= @user.email %></h3>
+      <div class='columns small-12 medium-6 text-center'>
+        <% if @user.profile_photo %>
+          <img id='profile-photo' src="<%= @user.profile_photo %>" alt="User Profile Picture" width=300px height=300px />
+        <% end %>
 
-      <% if @user.about_me %>
-        <h1> About Me </h1>
-        <p><%= @user.about_me %></p>
-      <% end %>
+        <h1> <%= @user.username %> </h1>
+
+          <p> Email: <h3><%= @user.email %></h3> </p>
+
+
+        <% if @user.about_me %>
+          <h1> About Me </h1>
+          <p><%= @user.about_me %></p>
+        <% end %>
+      </div>
+
+      <div class='columns small-12 medium-6 text-center'>
+        <% if !@user.is_student? %>
+          <%= link_to 'Create Lesson', new_lesson_path, class: 'button' %>
+        <% end %>
+        <!-- React component for all of teacher created lessons -->
+        <div id='teacher-lessons'></div>
+      </div>
 
     </div>
   </div>

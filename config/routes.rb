@@ -6,10 +6,13 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :edit, :update, :destroy]
 
+  resources :lessons
+
+
   namespace :api do
     namespace :v1 do
       resources :users
-      # resources :teacher, only: [:index]
+      resources :lessons
     end
   end
 

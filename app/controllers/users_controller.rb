@@ -4,18 +4,11 @@ class UsersController < ApplicationController
 
 
   def index
-    # @users = current_user
-    # if @user.is_student?
-    #   @users = User.where(is_student: true)
-    # else
-    #   @users = User.where(is_student: false)
-    # end
     @users = User.all
   end
 
   def show
     @user = User.find(params[:id])
-    # @students = @user.students
   end
 
   def edit

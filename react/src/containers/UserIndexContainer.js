@@ -20,6 +20,7 @@ class UserIndexContainer extends Component {
 
   componentDidMount() {
     this.displayListOfUsers();
+    debugger;
   }
 
   render() {
