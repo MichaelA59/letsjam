@@ -19,7 +19,7 @@
 
     <div class='row'>
       <%= f.label :date, "Date" %>
-      <%= f.collection_select :date, @date_collection, :first, :last  %>
+      <%= f.text_field :date, placeholder: "ex 09/29/1987" %>
       <p class='error'><%= show_errors(@lesson, 'Date') %></p>
     </div>
 
