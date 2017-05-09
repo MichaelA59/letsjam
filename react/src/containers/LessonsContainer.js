@@ -13,9 +13,8 @@ class LessonsContainer extends Component {
   }
 
   loadLessonsFromServer() {
-    // let currentPageUser = location.pathname;
-    // fetch("/api/v1" + currentPageUser + ".json")
-    fetch('api/v1/teachers/14')
+    let userId = this.props.params.id
+    fetch(`/api/v1/users/${userId}`, {credentials: 'same-origin'})
     // we now want to hit the show method of the user api controller. go there next
     .then(lessonResponse => lessonResponse.json())
     .then(usableLessonData => {
@@ -23,27 +22,17 @@ class LessonsContainer extends Component {
       this.setState({
         lessons: usableLessonData.lessons,
         teacher: usableLessonData.teacher,
-        currentUser: usableLessonData.user
+        currentUser: usableLessonData.currentUser
       })
     })
   }
 
-  // handleSubmit(event, lesson_id, currentUser_id) {
-  //   // we need three arguments. Event, lesson_id, currentUser id
-  //   event.preventDefault()
-  //   let requestBody = {
-  //     lesson_id: lesson_id,
-  //     user_id: currentUser_id
-  //   }
-  //   fetch('/api/v1/tutorships', { method: 'POST', body: JSON.stringify(requestBody) })
-  //   //  want to make sure we specify the method is create, and the body is requestBody
-  //   .then(response => {
-  //     let parsed = response.json()
-  //     return parsed
-  //   }).then(message => {
-  //     debugger;
-  //   })
-  // }
+  handleSubmit(lesson_id) {
+    fetch(`/api/v1/lessons/${lesson_id}`, {
+      method: 'PATCH',
+      credentials: 'same-origin'}
+    )
+  }
 
   // <div className='button' onClick={props.handleJoin(props.id)}>Join this Lesson</div>
 
@@ -61,6 +50,9 @@ class LessonsContainer extends Component {
 
   render() {
     let lessons = this.state.lessons.map (lesson => {
+      let handleJoin = () => {
+        this.handleSubmit(lesson.id)
+      }
       return(
         <Lesson
           key={lesson.id}
@@ -68,10 +60,7 @@ class LessonsContainer extends Component {
           instrument={lesson.instrument}
           skillLevel={lesson.skill_level}
           date={lesson.date}
-          // handleJoin={this.handleSubmit}
-          // teacher={this.state.teacher}
-
-          //put some props here
+          handleJoin={handleJoin}
           />
       )
     })

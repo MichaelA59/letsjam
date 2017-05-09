@@ -14,14 +14,11 @@ $(function() {
   }
 });
 
-
-
-//
-// $(function() {
-//   if(document.getElementById('teacher-lessons')) {
-//     ReactDOM.render(
-//       <LessonsContainer />,
-//       document.getElementById('teacher-lessons')
-//     );
-//   }
-// });
+$(function() {
+  if(document.getElementById('teacher-lessons')) {
+    ReactDOM.render(
+      <App />,
+      document.getElementById('teacher-lessons')
+    );
+  }
+});

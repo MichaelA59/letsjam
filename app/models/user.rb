@@ -15,5 +15,7 @@ class User < ApplicationRecord
 
   has_many :students, class_name: "User", foreign_key: 'teacher_id', through: :lessons
   has_many :teachers, class_name: "User", foreign_key: 'student_id', through: :lessons
-
+  
+  has_many :lessons_teaching, class_name: "Lesson", foreign_key: 'teacher_id'
+  has_many :lessons_as_student, class_name: "Lesson", foreign_key: 'student_id'
 end

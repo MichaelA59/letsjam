@@ -7,10 +7,15 @@ class Api::V1::UsersController < ApplicationController
 
   def show
     teacher = User.find(params[:id])
-    user = current_user
+    @user = current_user
 
-    lessons = Lesson.where(teacher: teacher)
-    lesson_info = { teacher: teacher, user: user, lessons: lessons }
+    lessons = teacher.lessons_teaching
+
+    lesson_info = {
+      teacher: teacher,
+      currentUser: @user,
+      lessons: lessons
+    }
     render json: lesson_info
   end
 end

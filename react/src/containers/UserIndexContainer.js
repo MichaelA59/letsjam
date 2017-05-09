@@ -13,18 +13,19 @@ class UserIndexContainer extends Component {
   displayListOfUsers() {
     let userType = this.props.userType;
     let whichUser;
+
     if (userType) {
       whichUser = 'teachers'
-    }
-    else {
+    } else {
       whichUser = 'students'
     }
-    fetch(`api/v1/${whichUser}`)
-    .then(response => response.json())
-    .then(useableUserData => {
-      this.setState({ users : useableUserData })
-    })
 
+    fetch(`api/v1/${whichUser}`)
+      .then(response => response.json())
+      .then(useableUserData => {
+        this.setState({ users : useableUserData })
+      })
+    }
 
   componentDidMount() {
     this.displayListOfUsers();
