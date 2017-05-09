@@ -1,7 +1,9 @@
 class Api::V1::TeachersController < ApplicationController
 
   def show
-    # All Lessons created by THIS teacher
+    teacher = User.find(params[:id])
+    lessons = Lesson.where(teacher_id: teacher)
+    render json: lessons
   end
 
   def index

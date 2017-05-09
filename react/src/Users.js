@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Choice from './components/Choice'
-import Header from './components/Header'
-import UserIndexContainer from './containers/UserIndexContainer'
+import Choice from './components/Choice';
+import Header from './components/Header';
+import UserIndexContainer from '../containers/UserIndexContainer';
 
 class Users extends Component {
   constructor(props) {

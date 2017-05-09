@@ -3,7 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const User = (props) => {
-
   return(
     <div className='homepage-user-index column column-block'>
       <h1>
