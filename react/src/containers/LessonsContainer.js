@@ -5,26 +5,55 @@ class LessonsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lessons: []
+      lessons: [],
+      currentUser: {},
+      teacher: {}
     }
     this.loadLessonsFromServer = this.loadLessonsFromServer.bind(this)
   }
 
-  loadLessonsFromServer() {
-    fetch('/api/v1/lessons')
+  loadLessonsFromServer(id) {
+    // let currentPageUser = location.pathname;
+    // fetch("/api/v1" + currentPageUser + ".json")
+    fetch("api/v1/users/:id")
+    // we now want to hit the show method of the user api controller. go there next
     .then(lessonResponse => lessonResponse.json())
     .then(usableLessonData => {
-      this.setState({ lessons: usableLessonData})
+      // set ALL of the state attributes appropriately, and pass down as props to the lesson
+      this.setState({
+        lessons: usableLessonData.lessons,
+        teacher: usableLessonData.teacher,
+        currentUser: usableLessonData.user
+      })
     })
   }
 
+  // handleSubmit(event, lesson_id, currentUser_id) {
+  //   // we need three arguments. Event, lesson_id, currentUser id
+  //   event.preventDefault()
+  //   let requestBody = {
+  //     lesson_id: lesson_id,
+  //     user_id: currentUser_id
+  //   }
+  //   fetch('/api/v1/tutorships', { method: 'POST', body: JSON.stringify(requestBody) })
+  //   //  want to make sure we specify the method is create, and the body is requestBody
+  //   .then(response => {
+  //     let parsed = response.json()
+  //     return parsed
+  //   }).then(message => {
+  //     debugger;
+  //   })
+  // }
+
+  // <div className='button' onClick={props.handleJoin(props.id)}>Join this Lesson</div>
+
   componentDidMount() {
     this.loadLessonsFromServer();
+    //get all of the lesson data, this now includes the teacher of the lesson and the current user. yay!
   }
 
   render() {
     let lessons = this.state.lessons.map (lesson => {
-      debugger;
       return(
         <Lesson
           key={lesson.id}
@@ -32,6 +61,10 @@ class LessonsContainer extends Component {
           instrument={lesson.instrument}
           skillLevel={lesson.skill_level}
           date={lesson.date}
+          // handleJoin={this.handleSubmit}
+          // teacher={this.state.teacher}
+
+          //put some props here
           />
       )
     })
