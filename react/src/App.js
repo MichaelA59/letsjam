@@ -1,56 +1,22 @@
 import React, { Component } from 'react';
-import Choice from './components/Choice'
-import Header from './components/Header'
-import UserIndexContainer from './containers/UserIndexContainer'
+import { Router, Route, Link, browserHistory } from 'react-router';
+import Users from './Users';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userType: null
-    }
-    this.handleChangeUserTypeStudent = this.handleChangeUserTypeStudent.bind(this)
-    this.handleChangeUserTypeTeacher = this.handleChangeUserTypeTeacher.bind(this)
+  constructor(props){
+    super(props)
+    this.state = {}
   }
-
-  handleChangeUserTypeStudent() {
-    this.setState({ userType: true})
-  }
-
-  handleChangeUserTypeTeacher() {
-    this.setState({ userType: false})
-  }
-
 
   render() {
-
-    let onButtonClick = () => {
-      this.handleChangeUserType()
-    }
-
-  return (
-    <div>
-      <section className='test'>
-        <div className='parallax'>
-          <div className='filler-content'>
-            <div id='question'> Connecting Teachers & Talent </div>
-            <Choice
-              onButtonClickStudent={this.handleChangeUserTypeStudent}
-              onButtonClickTeacher={this.handleChangeUserTypeTeacher}
-            />
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="container">
-            <UserIndexContainer
-              userType={this.state.userType}
-             />
-        </div>
-      </section>
-    </div>
-  )}
+    return(
+      <Router history={browserHistory}>
+        <Route path='/' component={Users}>
+        
+        </Route>
+      </Router>
+    )
+  }
 }
 
 export default App;

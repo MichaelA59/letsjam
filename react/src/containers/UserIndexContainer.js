@@ -11,7 +11,16 @@ class UserIndexContainer extends Component {
   }
 
   displayListOfUsers() {
-    fetch('api/v1/users')
+    let userType = this.props.userType;
+    debugger;
+    let whichUser;
+    if (userType) {
+      whichUser = 'students'
+    }
+    else {
+      whichUser = 'teachers'
+    }
+    fetch(`api/v1/${whichUser}`)
     .then(response => response.json())
     .then(useableUserData => {
       this.setState({ users : useableUserData })
@@ -24,13 +33,7 @@ class UserIndexContainer extends Component {
 
   render() {
 
-    let userType = this.props.userType
-
-    let filteredUsers = this.state.users.filter(function(user) {
-      return user.is_student !== userType
-    })
-
-    let users = filteredUsers.map (user => {
+    let users = this.state.users.map (user => {
       return(
         <User
           key={user.id}
@@ -43,14 +46,12 @@ class UserIndexContainer extends Component {
           zip={user.zip}
           mobile={user.mobile}
           about_me={user.about_me}
-          userType={userType}
         />
       )
     })
 
     let userListHeader = ''
-
-    if (userType == true) {
+    if (this.props.userType) {
       userListHeader = 'Available Teachers'
     }
     else {

@@ -12,21 +12,21 @@ class LessonsContainer extends Component {
     this.loadLessonsFromServer = this.loadLessonsFromServer.bind(this)
   }
 
-  loadLessonsFromServer(id) {
-    // let currentPageUser = location.pathname;
-    // fetch("/api/v1" + currentPageUser + ".json")
-    fetch("api/v1/users/:id")
-    // we now want to hit the show method of the user api controller. go there next
-    .then(lessonResponse => lessonResponse.json())
-    .then(usableLessonData => {
-      // set ALL of the state attributes appropriately, and pass down as props to the lesson
-      this.setState({
-        lessons: usableLessonData.lessons,
-        teacher: usableLessonData.teacher,
-        currentUser: usableLessonData.user
-      })
-    })
-  }
+  // loadLessonsFromServer() {
+  //   // let currentPageUser = location.pathname;
+  //   // fetch("/api/v1" + currentPageUser + ".json")
+  //   fetch("api/v1/users/14")
+  //   // we now want to hit the show method of the user api controller. go there next
+  //   .then(lessonResponse => lessonResponse.json())
+  //   .then(usableLessonData => {
+  //     // set ALL of the state attributes appropriately, and pass down as props to the lesson
+  //     this.setState({
+  //       lessons: usableLessonData.lessons,
+  //       teacher: usableLessonData.teacher,
+  //       currentUser: usableLessonData.user
+  //     })
+  //   })
+  // }
 
   // handleSubmit(event, lesson_id, currentUser_id) {
   //   // we need three arguments. Event, lesson_id, currentUser id
@@ -46,6 +46,13 @@ class LessonsContainer extends Component {
   // }
 
   // <div className='button' onClick={props.handleJoin(props.id)}>Join this Lesson</div>
+
+//   patch request (edit)to lessons controller
+//   takes in the lesson_id, current_user and add rthart user to the lesson
+//
+// look at mikes router challenge
+
+
 
   componentDidMount() {
     this.loadLessonsFromServer();
