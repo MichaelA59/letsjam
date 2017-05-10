@@ -1,50 +1,99 @@
 import React, { Component } from 'react';
 import Choice from './components/Choice';
 import Header from './components/Header';
-import UserIndexContainer from './containers/UserIndexContainer';
+import User from './components/User';
 
 class Users extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userType: null
+      userType: null,
+      users: []
     }
     this.handleChangeUserTypeStudent = this.handleChangeUserTypeStudent.bind(this)
     this.handleChangeUserTypeTeacher = this.handleChangeUserTypeTeacher.bind(this)
+    this.displayListOfUsers = this.displayListOfUsers.bind(this);
   }
 
   handleChangeUserTypeStudent() {
     this.setState({ userType: true})
+    this.displayListOfUsers()
   }
 
   handleChangeUserTypeTeacher() {
     this.setState({ userType: false})
+    this.displayListOfUsers()
   }
 
-  render() {
-    return (
-      <div>
-        <section className='test'>
-          <div className='parallax'>
-            <div className='filler-content'>
-              <div id='question'> Connecting Teachers & Talent </div>
-              <Choice
-                onButtonClickStudent={this.handleChangeUserTypeStudent}
-                onButtonClickTeacher={this.handleChangeUserTypeTeacher}
-              />
-            </div>
-          </div>
-        </section>
+  displayListOfUsers() {
+    let whichUser;
+    if (this.state.userType) {
+      whichUser = 'teachers'
+      // Because we want to see Teachers if we want to LEARN
+      // So it needs to be reversed
+    } else {
+      whichUser = 'students'
+    }
 
-        <section>
-          <div className="container">
-              <UserIndexContainer
-                userType={this.state.userType}
-               />
-          </div>
-        </section>
-      </div>
-    )
+    fetch(`api/v1/${whichUser}`)
+      .then(response => response.json())
+      .then(useableUserData => {
+        this.setState({ users: useableUserData })
+      })
+    }
+
+  render() {
+    let users = this.state.users.map(user => {
+      return(
+        <User
+          key={user.id}
+          id={user.id}
+          photo={user.profile_photo}
+          email={user.email}
+          username={user.username}
+        />
+      )
+    })
+
+    let userListHeader = '';
+    if (this.state.userType) {
+      userListHeader = 'Available Teachers'
+    } else {
+      userListHeader = 'Available Students'
+    }
+
+      return (
+        <div>
+          <section className='test'>
+            <div className='parallax'>
+              <div className='filler-content'>
+                <div id='question'> Connecting Teachers & Talent </div>
+                <Choice
+                  onButtonClickStudent={this.handleChangeUserTypeStudent}
+                  onButtonClickTeacher={this.handleChangeUserTypeTeacher}
+                />
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div className="container">
+              <h1 id='users-list'> {userListHeader} </h1>
+              <div className='row small-up-1 medium-up-2 large-up-3'>
+                {users}
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div className='row'>
+              <div className='columns small-12 small-centered'>
+                <a href='#top-bar' className='button'>Back to Top</a>
+              </div>
+            </div>
+          </section>
+        </div>
+      )
   }
 }
 

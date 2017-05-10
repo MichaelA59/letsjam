@@ -11,9 +11,6 @@ const User = (props) => {
       <img src={props.photo.url} alt="User Profile Picture" width="300px" height="auto"/>
       <p>{props.first_name} {props.last_name}</p>
       <p><strong>{props.email}</strong></p>
-      <p><i>PlaceHolder for Google Map</i></p>
-      <p><i>PlaceHolder for Online Learning</i></p>
-      <hr width='50%'/>
     </div>
   )
 }
