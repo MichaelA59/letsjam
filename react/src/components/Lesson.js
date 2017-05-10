@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 class Lesson extends Component {
-  contstructor(props){
+  constructor(props){
     super(props);
     this.state = {
-      vacancy: 'available';
+      vacancy: 'available'
     }
     this.handleChangeClassName = this.handleChangeClassName.bind(this)
   }
