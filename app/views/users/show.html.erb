@@ -20,7 +20,7 @@
 <section>
   <div class='container'>
     <div class='row'>
-      <%= link_to 'Edit Profile', edit_user_path(@user), class: 'button' %>
+      <%= link_to 'Tell a little about yourself!', edit_user_path(@user), class: 'button' %>
     </div>
 
     <div class='row'>
@@ -32,12 +32,23 @@
 
         <h1> <%= @user.username %> </h1>
 
-          <p> Email: <h3><%= @user.email %></h3> </p>
+        <p> Email: <h3><%= @user.email %></h3> </p>
+
+        <% if @user.instruments_played %>
+          <h1> My Instrument </h1>
+          <p><%= @user.instruments_played %></p>
+        <% end %>
+
+        <% if @user.favotorite_genre %>
+          <h1> My Favorite Genre </h1>
+          <p><%= @user.favotorite_genre %></p>
+        <% end %>
 
         <% if @user.about_me %>
           <h1> About Me </h1>
           <p><%= @user.about_me %></p>
         <% end %>
+
       </div>
 
       <div class='columns small-12 medium-6 text-center'>

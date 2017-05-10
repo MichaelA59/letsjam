@@ -15,6 +15,8 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
+    @instrument_played = User::INSTRUMENTS
+    @favotie_genre = User::FAVOTITE_GENRE
   end
 
   def update
@@ -29,10 +31,17 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :email, :is_student, :zip, :mobile, :about_me, :profile_photo)
+    params.require(:user).permit(
+      :first_name,
+      :last_name,
+      :username,
+      :email,
+      :is_student,
+      :about_me,
+      :profile_photo,
+      :instruments_played,
+      :favotorite_genre )
   end
-
-# :profile_photo
 
   protected
 
