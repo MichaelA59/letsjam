@@ -5,11 +5,10 @@ class LessonsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lessons: [],
       currentUser: {},
+      lessons: [],
       teacher: {},
       student: {},
-      vacancy: 'available'
     }
     this.loadLessonsFromServer = this.loadLessonsFromServer.bind(this)
   }
@@ -24,9 +23,9 @@ class LessonsContainer extends Component {
     .then(lessonResponse => lessonResponse.json())
     .then(usableLessonData => {
       this.setState({
+        currentUser: usableLessonData.currentUser,
         lessons: usableLessonData.lessons,
         teacher: usableLessonData.teacher,
-        currentUser: usableLessonData.currentUser,
         student: usableLessonData.student
       })
     })
@@ -37,7 +36,6 @@ class LessonsContainer extends Component {
       method: 'PATCH',
       credentials: 'same-origin'}
     )
-    this.setState({ vacancy: 'unavailable'})
   }
 
   componentDidMount() {
@@ -59,7 +57,6 @@ class LessonsContainer extends Component {
           date={lesson.date}
           studentId={lesson.student_id}
           handleJoin={handleJoin}
-          vacancy={this.state.vacancy}
           />
       )
     })
