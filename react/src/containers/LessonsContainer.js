@@ -8,10 +8,15 @@ class LessonsContainer extends Component {
       lessons: [],
       currentUser: {},
       teacher: {},
-      student: {}
+      student: {},
+      vacancy: 'available'
     }
     this.loadLessonsFromServer = this.loadLessonsFromServer.bind(this)
   }
+
+  // Vacancy needs to be set as a attribute in the lesson table(is_vacant: true - by default)
+  // then needs to be changed when a student joins to `is_vacant: true`
+  // then passed back to react and set as state
 
   loadLessonsFromServer() {
     let userId = this.props.params.id
@@ -21,7 +26,8 @@ class LessonsContainer extends Component {
       this.setState({
         lessons: usableLessonData.lessons,
         teacher: usableLessonData.teacher,
-        currentUser: usableLessonData.currentUser
+        currentUser: usableLessonData.currentUser,
+        student: usableLessonData.student
       })
     })
   }
@@ -31,6 +37,7 @@ class LessonsContainer extends Component {
       method: 'PATCH',
       credentials: 'same-origin'}
     )
+    this.setState({ vacancy: 'unavailable'})
   }
 
   componentDidMount() {
@@ -42,6 +49,7 @@ class LessonsContainer extends Component {
       let handleJoin = () => {
         this.handleSubmit(lesson.id)
       }
+
       return(
         <Lesson
           key={lesson.id}
@@ -51,6 +59,7 @@ class LessonsContainer extends Component {
           date={lesson.date}
           studentId={lesson.student_id}
           handleJoin={handleJoin}
+          vacancy={this.state.vacancy}
           />
       )
     })
