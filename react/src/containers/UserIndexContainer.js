@@ -25,6 +25,7 @@ class UserIndexContainer extends Component {
       .then(useableUserData => {
         this.setState({ users : useableUserData })
       })
+      debugger;
     }
 
   componentDidMount() {
