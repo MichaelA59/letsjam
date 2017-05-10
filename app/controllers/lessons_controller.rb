@@ -29,11 +29,15 @@ class LessonsController < ApplicationController
     teacher_id = @user.id
     @lesson = Lesson.new(lesson_params)
     @lesson.teacher_id = @user.id
-
+    # binding.pry
     if @lesson.save
+      # binding.pry
+
       flash[:notice] = 'Lesson added successfully!'
       redirect_to @user
     else
+      # binding.pry
+
       @instrument_collection = Lesson::INSTRUMENTS
       @skill_level_collection = Lesson::SKILL_LEVELS
       @date_collection = Lesson::DATE

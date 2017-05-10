@@ -8,7 +8,7 @@ class Api::V1::LessonsController < ApplicationController
   end
 
   def update
-    binding.pry
+    # binding.pry
     Lesson.update(params[:id], student: current_user)
   end
 

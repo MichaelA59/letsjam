@@ -24,7 +24,8 @@ class Lesson < ApplicationRecord
   validates :instrument, presence: true
   validates :skill_level, presence: true
   validates :date, presence: true
+  # validates :student_id, optional: true
 
   belongs_to :teacher, class_name: "User", foreign_key: "teacher_id"
-  belongs_to :student, class_name: "User", foreign_key: "student_id"
+  belongs_to :student, class_name: "User", foreign_key: "student_id", optional: true
 end

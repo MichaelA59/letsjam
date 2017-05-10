@@ -7,7 +7,8 @@ class LessonsContainer extends Component {
     this.state = {
       lessons: [],
       currentUser: {},
-      teacher: {}
+      teacher: {},
+      student: {}
     }
     this.loadLessonsFromServer = this.loadLessonsFromServer.bind(this)
   }
@@ -15,10 +16,8 @@ class LessonsContainer extends Component {
   loadLessonsFromServer() {
     let userId = this.props.params.id
     fetch(`/api/v1/users/${userId}`, {credentials: 'same-origin'})
-    // we now want to hit the show method of the user api controller. go there next
     .then(lessonResponse => lessonResponse.json())
     .then(usableLessonData => {
-      // set ALL of the state attributes appropriately, and pass down as props to the lesson
       this.setState({
         lessons: usableLessonData.lessons,
         teacher: usableLessonData.teacher,
@@ -34,18 +33,8 @@ class LessonsContainer extends Component {
     )
   }
 
-  // <div className='button' onClick={props.handleJoin(props.id)}>Join this Lesson</div>
-
-//   patch request (edit)to lessons controller
-//   takes in the lesson_id, current_user and add rthart user to the lesson
-//
-// look at mikes router challenge
-
-
-
   componentDidMount() {
     this.loadLessonsFromServer();
-    //get all of the lesson data, this now includes the teacher of the lesson and the current user. yay!
   }
 
   render() {
@@ -60,6 +49,7 @@ class LessonsContainer extends Component {
           instrument={lesson.instrument}
           skillLevel={lesson.skill_level}
           date={lesson.date}
+          studentId={lesson.student_id}
           handleJoin={handleJoin}
           />
       )
