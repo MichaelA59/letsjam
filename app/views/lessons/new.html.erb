@@ -1,0 +1,39 @@
+<h1> Create a New Lesson </h1>
+
+
+<div class='form-box'>
+
+  <%= form_for @lesson do |f| %>
+
+    <div class='row'>
+      <%= f.label :instrument, "Instrument" %>
+      <%= f.collection_select :instrument, @instrument_collection, :first, :last %>
+      <p class='error'><%= show_errors(@lesson, 'Instrument') %></p>
+    </div>
+
+    <div class='row'>
+      <%= f.label :skill_level, "Skill Level" %>
+      <%= f.collection_select :skill_level, @skill_level_collection, :first, :last  %>
+      <p class='error'><%= show_errors(@lesson, 'Skill Level') %></p>
+    </div>
+
+    <div class='row'>
+      <%= f.label :date, "Date" %>
+      <%= f.text_field :date, placeholder: "ex 09/29/1987", type:'date' %>
+      <p class='error'><%= show_errors(@lesson, 'Date') %></p>
+    </div>
+
+    <div class='submit-container'>
+      <%= f.submit %>
+    </div>
+
+  <% end %>
+</div>
+
+<% if @lesson.errors.any? %>
+<ul>
+  <% @lesson.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>

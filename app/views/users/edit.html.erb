@@ -1,9 +1,28 @@
 <h1>Edit Profile</h1>
 
-
 <%= form_for(@user) do |f| %>
+  <%= f.label :email, "Email" %>
+  <%= f.email_field :email, autofocus: true, :input_html => { :value => @user.email} %>
+
+  <%= f.label :instruments_played, 'My Instrument' %>
+  <%= f.collection_select :instruments_played, @instrument_played, :first, :last %>
+
+  <%= f.label :favotorite_genre, "Favorite Genre" %>
+  <%= f.collection_select :favotorite_genre, @favotie_genre, :first, :last %>
+
+  <%= f.label :about_me, "About Me" %>
+  <%= f.text_area :about_me, :size => "5x4" %>
+
+  <div class='submit-container'>
+    <%= f.submit "Update Profile", class: 'button' %>
+  </div>
+  <% end %>
 
 
 
 
+  <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |error| %>
+      <p><%= error %></p>
+    <% end %>
 <% end %>

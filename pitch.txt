@@ -13,41 +13,34 @@ I saw that your company is doing _____ and I’d love to learn more about some p
                 ----------------------------------------
 
 
-Hi, my name is Mike . I am 29 years old, I'm from Western Mass and I can
-confidently say that, in programming - I have finally found my dream job.
+Hi, my name is Mike, I'm 29 years old and I can confidently say that, in  web
+development - I have finally found my dream job.
 
-Apart from being a developer I'm also a self-taught musician. This has exposed me
-to a world of creation and collaboration. I've seen first hand how passion alone
-can yield tremendous growth.
+I began my journey as a self-taught musician. Now, when I started, at the age of 16,
+I had no idea what I was doing and looking back, I feel really bad for subjecting
+my parents to late night jams that were just barely listenable. But I had a passion
+for playing and that allowed me excel.
 
-The same passion that propelled my growth in music is now being utilized here at Launch.
-Being a developer affords me the ability to use creative ways to solve problems.
-It also relies heavily on collaboration and communication between team-members.
+A year ago, I decided to find a challenging new adventure that would utilize my
+creative skills. Thats when I learned about coding. With code, I'm able to take an
+idea and make it a reality, much like music. So, for my capstone project, I decided
+to tackle a problem I faced when working freelance as a music instructor. I always
+wanted there to be a central location for teachers and students to find each other.
 
-With code, I'm able to take an idea and make it a reality. So, for my capstone project,
-I decided to tackle a problem I faced when working freelance as a music instructor.
+So I created Let's Jam. My app makes it easy for teachers to find students and vice verse.
+Upon signing up for an account, a user can specify a Teacher or Student designation.
 
-I had the skills to teach and word of mouth certainly helped with my business but
-I always felt like there should be an easier way for students to connect with teachers.
-So I created Let's Jam.
+Users can see a full list of either Students or Teachers from the homepage by clicking
+on one of two buttons. They can see quick bullet point details about the various users
+and clicking on the Username will redirect to that user's profile page.
 
-My app is a meeting place for teachers and students alike to connect. Upon signing
-up for an account, a user can specify a Teacher or Student designation. They can also
-sign up for an account using LinkedIn, Google or Facebook.
 
-Users are able to search for one another using the Google API. Additionally, Students
-are able to search for instructors offering online-learning. When a Student and Teacher
-connect for an online learning experience, a Zoom video chat link will be automatically
-generated and sent to both the Student and Teacher via Email.
+
 
 Learning an instrument is a long-term commitment and you wouldn't want to learn from
 someone unless they were well vetted. To solve this, I have allowed students
 the ability to rate Teachers on a variety of metrics, including things like clarity
 of instruction and competence.
-
-Drawing inspiration from places like Angie's List, Instructors with music degrees
-will receive a star that will be prominently displayed on both their profile and
-the index page. This is verified using the LinkedIn API.
 
 The backend of my app was created using Rails. On the front end
 I chose to use React and I did so for a few reasons. First, it was the one area I
