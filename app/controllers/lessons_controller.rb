@@ -21,7 +21,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new
     @instrument_collection = Lesson::INSTRUMENTS
     @skill_level_collection = Lesson::SKILL_LEVELS
-    @date_collection = Lesson::DATE
+
   end
 
   def create
@@ -38,7 +38,6 @@ class LessonsController < ApplicationController
       @instrument_collection = Lesson::INSTRUMENTS
       @skill_level_collection = Lesson::SKILL_LEVELS
       @date_collection = Lesson::DATE
-      render action: 'new'
     end
   end
 
@@ -46,7 +45,6 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find(params[:id])
     @instrument_collection = Lesson::INSTRUMENTS
     @skill_level_collection = Lesson::SKILL_LEVELS
-    @date_collection = Lesson::DATE
   end
 
   def update
