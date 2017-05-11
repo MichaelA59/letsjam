@@ -1,12 +1,17 @@
 class Lesson < ApplicationRecord
 
   INSTRUMENTS = [
-    ["Guitar", "Guitar"],
     ["Bass", "Bass"],
+    ["Cello", "Cello"],
     ["Drums", "Drums"],
+    ["Double Bass", "Double Bass"],
+    ["Flute", "Flute"],
+    ["Guitar", "Guitar"],
     ["Piano", "Piano"],
+    ["Saxophone", "Saxophone"],
+    ["Trumpet", "Trumpet"],
     ["Vocals", "Vocals"],
-    ["Saxaphone", "Saxaphone"]
+    ["Violin", "Violin"],
   ].freeze
 
   SKILL_LEVELS = [
@@ -15,16 +20,9 @@ class Lesson < ApplicationRecord
     ["Advanced", "Advanced"]
   ].freeze
 
-  DATE = [
-    ["Today", "Today"],
-    ["Tomorrow", "Tomorrow"],
-    ["In a Week", "In a Week"],
-  ].freeze
-
   validates :instrument, presence: true
   validates :skill_level, presence: true
   validates :date, presence: true
-  # validates :student_id, optional: true
 
   belongs_to :teacher, class_name: "User", foreign_key: "teacher_id"
   belongs_to :student, class_name: "User", foreign_key: "student_id", optional: true

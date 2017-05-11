@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import LessonIndex from './LessonIndex';
+import { Router, Route, Link, browserHistory } from 'react-router';
+
 
 class LessonList extends Component {
   constructor(props){
@@ -45,7 +47,12 @@ class LessonList extends Component {
             </div>
           </div>
         </section>
+
+
+        <Link to='/'> Home </Link>
+
       </div>
+
     )
   }
 }

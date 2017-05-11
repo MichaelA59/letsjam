@@ -18,8 +18,7 @@
   </div>
   <% end %>
 
-
-
+  <a href='/users/<%= @user.id %>'>Go Back</a>
 
   <% if @user.errors.any? %>
     <% @user.errors.full_messages.each do |error| %>

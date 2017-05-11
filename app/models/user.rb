@@ -34,7 +34,6 @@ class User < ApplicationRecord
     ["Rock", "Rock"],
   ].freeze
 
-
   mount_uploader :profile_photo, ProfilePhotoUploader
 
   validates :first_name, presence: true
