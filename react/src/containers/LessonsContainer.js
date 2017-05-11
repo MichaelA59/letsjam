@@ -13,10 +13,6 @@ class LessonsContainer extends Component {
     this.loadLessonsFromServer = this.loadLessonsFromServer.bind(this)
   }
 
-  // Vacancy needs to be set as a attribute in the lesson table(is_vacant: true - by default)
-  // then needs to be changed when a student joins to `is_vacant: true`
-  // then passed back to react and set as state
-
   loadLessonsFromServer() {
     let userId = this.props.params.id
     fetch(`/api/v1/users/${userId}`, {credentials: 'same-origin'})
@@ -31,7 +27,7 @@ class LessonsContainer extends Component {
     })
   }
 
-  handleSubmit(lesson_id) {
+  handleSubmit(lesson_id, student_id) {
     fetch(`/api/v1/lessons/${lesson_id}`, {
       method: 'PATCH',
       credentials: 'same-origin'}
@@ -45,7 +41,7 @@ class LessonsContainer extends Component {
   render() {
     let lessons = this.state.lessons.map (lesson => {
       let handleJoin = () => {
-        this.handleSubmit(lesson.id)
+        this.handleSubmit(lesson.id, lesson.student_id)
       }
 
       return(

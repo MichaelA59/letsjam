@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Choice from './components/Choice';
 import Header from './components/Header';
 import User from './components/User';
+import { Router, Route, Link, browserHistory } from 'react-router';
 
 class Users extends Component {
   constructor(props) {
@@ -79,6 +80,7 @@ class Users extends Component {
           <section>
             <div className="container">
               <h1 id='users-list'> {userListHeader} </h1>
+              <h3 className='text-center'><Link to="/lessons"> View All Lessons </Link></h3>
               <div className='row small-up-1 medium-up-2 large-up-3'>
                 {users}
               </div>
@@ -87,7 +89,7 @@ class Users extends Component {
 
           <section>
             <div className='row'>
-              <div className='columns small-12 small-centered'>
+              <div className='columns small-12 small-centered text-center'>
                 <a href='#top-bar' className='button'>Back to Top</a>
               </div>
             </div>

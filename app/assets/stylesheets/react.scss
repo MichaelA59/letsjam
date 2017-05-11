@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster|Open+Sans|Montserrat|Raleway|Merriweather:300,400,700|Montserrat:400,500,600,700');
 
-
-
-
 .homepage-user-index {
   text-align: center;
   border: 1px solid rgba(0,0,0,.61);
@@ -27,9 +24,15 @@
 }
 
 .available {
-  background: green;
+  border: 2px solid green;
+  margin: 1em;
+  background: #f3f3f3;
+  box-shadow: 2px 2px black;
 }
 
 .unavailable {
-  background: red;
+  border: 2px solid red;
+  margin: 1em;
+  background: #f3f3f3;
+  box-shadow: 2px 2px black;
 }
