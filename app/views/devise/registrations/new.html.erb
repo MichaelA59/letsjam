@@ -29,10 +29,6 @@
       <%= f.label :password_confirmation, "Password Confirmation" %>
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
 
-      <%= f.label :zip, "Zip Code" %>
-      <%= f.text_field :zip, autocomplete: "off" %>
-      <!-- <p class='error'><%= show_errors(resource, 'Zip Code') %></p> -->
-
       <%= f.radio_button :is_student, true %>
       <%= f.label :is_student, "Student", value: true %>
 

@@ -4,28 +4,24 @@ class UsersController < ApplicationController
 
 
   def index
-    # @users = current_user
-    # if @user.is_student?
-    #   @users = User.where(is_student: true)
-    # else
-    #   @users = User.where(is_student: false)
-    # end
+    @current_user = current_user
     @users = User.all
   end
 
   def show
+    @current_user = current_user
     @user = User.find(params[:id])
-    # @students = @user.students
   end
 
   def edit
     @user = current_user
+    @instrument_played = User::INSTRUMENTS
+    @favotie_genre = User::FAVOTITE_GENRE
   end
 
   def update
     @user = User.find(params[:id])
-    @user.update_attributes(user_params)
-    if @user.save
+    if @user.update(user_params)
       redirect_to @user
     else
       render :edit
@@ -35,10 +31,17 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :email, :is_student, :zip, :mobile, :about_me, :profile_photo)
+    params.require(:user).permit(
+      :first_name,
+      :last_name,
+      :username,
+      :email,
+      :is_student,
+      :about_me,
+      :profile_photo,
+      :instruments_played,
+      :favotorite_genre )
   end
-
-# :profile_photo
 
   protected
 
