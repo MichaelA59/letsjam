@@ -13,6 +13,8 @@
   <%= f.label :years_experience, 'Years of Experience' %>
   <%= f.collection_select :years_experience, @experience, :first, :last %>
 
+  <%= f.file_field :profile_photo %>
+
   <%= f.label :about_me, "About Me" %>
   <%= f.text_area :about_me, :size => "5x4" %>
 

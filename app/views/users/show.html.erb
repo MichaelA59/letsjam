@@ -52,6 +52,12 @@
               </div>
             <% end %>
             <% if @user.about_me %>
+              <div class='profile-card--additional-info__experience'>
+                <h4> Experience </h4>
+                <p><%= @user.years_experience %> years experience</p>
+              </div>
+            <% end %>
+            <% if @user.about_me %>
               <div class='profile-card--additional-info__about'>
                 <h4> About Me </h4>
                 <p><%= @user.about_me %></p>

@@ -12,8 +12,8 @@ Lesson.destroy_all
 # Top 9 Teachers
 
 User.create!(
-  first_name: 'Michael`',
-  last_name: 'Adamski`',
+  first_name: 'Michael',
+  last_name: 'Adamski',
   email: 'michael.adamski@gmail.com',
   password: 'password',
   username: 'Mikea59',

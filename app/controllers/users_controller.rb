@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-  before_action :authorize_user
+  # before_action :authorize_user
   before_action :configure_permitted_parameters, if: :devise_controller?
 
 
   def index
     @current_user = current_user
     @users = User.all
+    @user = @current_user
   end
 
   def show
