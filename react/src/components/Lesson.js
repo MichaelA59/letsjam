@@ -24,8 +24,7 @@ class Lesson extends Component {
       this.handleChangeClassName();
     }
     let url = this.props.instrument + '.png'
-    // debugger
-    // let assetHelper = assetHelper[url]
+    
     return (
       <div className={'lesson-card lesson-card__' + this.state.vacancy} onClick={handleClick}>
 
