@@ -4,7 +4,6 @@ class User < ApplicationRecord
     ["Bass", "Bass"],
     ["Cello", "Cello"],
     ["Drums", "Drums"],
-    ["Double Bass", "Double Bass"],
     ["Flute", "Flute"],
     ["Guitar", "Guitar"],
     ["Piano", "Piano"],

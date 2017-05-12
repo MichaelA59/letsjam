@@ -1,8 +1,17 @@
-<div class='login-signup-box'>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<section class='test'>
+  <div class='parallax-small parallax-small__signup'>
+    <div class="parallax-small--title"> Sign Up </div>
+  </div>
+</section>
 
-<!-- LEFT SIDE FORM -->
-  <div class="left">
+<div class='bumper-25'></div>
+<div class='bumper-25'></div>
+
+  <div class='login-signup-box'>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+    <!-- LEFT SIDE FORM -->
+    <div class="left">
       <%= f.label :first_name, "First Name" %>
       <%= f.text_field :first_name, autofocus: true %>
       <!-- <p class='error'><%= show_errors(resource, 'First name') %></p> -->
@@ -40,12 +49,12 @@
       <div class='form-actions'>
         <%= f.submit "Sign Up" %>
       </div>
-  </div>
-<!-- END LEFT SIDE FORM -->
+    </div>
+    <!-- END LEFT SIDE FORM -->
 
     <div class="or">OR</div>
 
-<!-- RIGHT SIDE FORM -->
+    <!-- RIGHT SIDE FORM -->
     <div class="right">
       <span class="loginwith">Sign in with<br />Social Media</span>
 
@@ -53,9 +62,13 @@
       <button class="social-signin twitter">Log in with LinkedIn</button>
       <button class="social-signin google">Log in with Google</button>
     </div>
-<!-- END RIGHT SIDE FORM -->
-  <% end %>
+    <!-- END RIGHT SIDE FORM -->
+    <% end %>
 
-  <!-- <%= devise_error_messages! %> -->
+    <!-- <%= devise_error_messages! %> -->
 
-</div>
+  </div>
+
+
+<div class='bumper-25'></div>
+<div class='bumper-25'></div>
