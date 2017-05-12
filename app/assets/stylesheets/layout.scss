@@ -2,7 +2,7 @@
 @import "login_form";
 @import "signup_form";
 @import "parallax_head";
-@import "react";
+@import "modules";
 
 $black: #000000;
 $grey-shadow: #999;
@@ -51,6 +51,13 @@ footer {
       color: $white;
     }
   }
+}
+
+.absolute-center {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
 }
 
 .top-bar {

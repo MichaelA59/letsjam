@@ -12,35 +12,54 @@
 <section>
   <div class='container'>
     <div class='row'>
-      <%= link_to 'Edit Profile', edit_user_path(@user), class: 'button' %>
-    </div>
 
-    <div class='row'>
+      <div class='columns small-12 medium-9'>
+        <div class='profile-card'>
+          <% if @user.profile_photo %>
+            <div class='profile-card--img-wrapper'>
+              <img class='profile-card--img' src="<%= @user.profile_photo %>" alt="User Profile Picture" />
+            </div>
+          <% end %>
 
-      <div class='columns small-12 medium-9 text-center'>
-        <% if @user.profile_photo %>
-          <img id='profile-photo' src="<%= @user.profile_photo %>" alt="User Profile Picture" width=300px height=300px />
-        <% end %>
+          <div class='profile-card--main-info'>
+            <div class='profile-card--main-info__name'>
+              <h4> <%= @user.first_name %> <%= @user.last_name %></h4>
+            </div>
+            <div class='profile-card--main-info__email'>
+              <p> <strong>Email</strong> | <%= @user.email %>  </p>
+            </div>
+            <div class='profile-card--main-info__cta'>
+              <%= link_to 'Edit Profile', edit_user_path(@user), class: '' %>
+            </div>
+          </div>
 
-        <h1> <%= @user.username %> </h1>
+          <div class="clearfix"></div>
+          <div class="bumper-25"></div>
+          <hr style="width:75%;">
+          <div class="bumper-25"></div>
 
-        <p> Email: <h3><%= @user.email %></h3> </p>
+          <div class="profile-card--additional-info">
+            <% if @user.instruments_played %>
+              <div class='profile-card--additional-info__instrument'>
+                <h4> My Instrument </h4>
+                <p><%= @user.instruments_played %></p>
+              </div>
+            <% end %>
+            <% if @user.favotorite_genre %>
+              <div class='profile-card--additional-info__genre'>
+                <h4> My Favorite Genre </h4>
+                <p><%= @user.favotorite_genre %></p>
+              </div>
+            <% end %>
+            <% if @user.about_me %>
+              <div class='profile-card--additional-info__about'>
+                <h4> About Me </h4>
+                <p><%= @user.about_me %></p>
+              </div>
+            <% end %>
+          </div>
 
-        <% if @user.instruments_played %>
-          <h1> My Instrument </h1>
-          <p><%= @user.instruments_played %></p>
-        <% end %>
-
-        <% if @user.favotorite_genre %>
-          <h1> My Favorite Genre </h1>
-          <p><%= @user.favotorite_genre %></p>
-        <% end %>
-
-        <% if @user.about_me %>
-          <h1> About Me </h1>
-          <p><%= @user.about_me %></p>
-        <% end %>
-
+        </div>
       </div>
 
       <div class='columns small-12 medium-3'>

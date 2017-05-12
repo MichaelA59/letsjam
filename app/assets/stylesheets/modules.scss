@@ -80,6 +80,54 @@
   }
 }
 
+.profile-card {
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  &--img-wrapper{
+    overflow: hidden;
+    position: relative;
+    border-radius: 100%;
+    border: 10px solid #fff;
+    height: 175px;
+    width: 175px;
+    box-shadow: 0px 0px 20px rgba(0,0,0,.2);
+    float: left;
+  }
+
+  &--img {
+    width: 150%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+  }
+
+  &--main-info{
+    float: left;
+    margin-left: 40px;
+    padding: 20px;
+
+    &__name {
+      font-size: 18px;
+      margin-bottom: 10px;
+
+      a {
+        color: #404040;
+      }
+    }
+  }
+  &--additional-info {
+    margin: 0 20px;
+    &__instrument, &__genre, &__about {
+      font-size: 16px;
+    }
+  }
+}
+
+
+
 #users-list {
   font-family: 'Montserrat';
   font-size: 24px;
