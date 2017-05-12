@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster|Open+Sans|Montserrat|Raleway|Merriweather:300,400,700|Montserrat:400,500,600,700');
-@import "login_form";
+@import "form";
 @import "signup_form";
 @import "parallax_head";
 @import "modules";
+@import "profile-edit";
 
 $black: #000000;
 $grey-shadow: #999;
@@ -61,7 +62,6 @@ footer {
 }
 
 .top-bar {
-  border-bottom: 1px solid rgba(84,84,84,.19);
   height: 6em;
   background-color: transparent;
 

@@ -35,6 +35,8 @@ class Users extends Component {
           email={user.email}
           firstname={user.first_name}
           lastname={user.last_name}
+          instrument={user.instruments_played}
+          experience={user.years_experience}
         />
       )
     })

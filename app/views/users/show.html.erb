@@ -1,8 +1,6 @@
 <section class='test'>
   <div class='parallax-small parallax-small__profile-page'>
-    <div class="parallax-small--title">
-      <%= @user.username %>
-    </div>
+    <div class="parallax-small--title"> Edit Profile </div>
   </div>
 </section>
 
@@ -49,6 +47,12 @@
               <div class='profile-card--additional-info__genre'>
                 <h4> My Favorite Genre </h4>
                 <p><%= @user.favotorite_genre %></p>
+              </div>
+            <% end %>
+            <% if @user.about_me %>
+              <div class='profile-card--additional-info__experience'>
+                <h4> Experience </h4>
+                <p><%= @user.years_experience %> years experience</p>
               </div>
             <% end %>
             <% if @user.about_me %>

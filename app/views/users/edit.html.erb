@@ -1,27 +1,55 @@
-<h1>Edit Profile</h1>
-
-<%= form_for(@user) do |f| %>
-  <%= f.label :email, "Email" %>
-  <%= f.email_field :email, autofocus: true, :input_html => { :value => @user.email} %>
-
-  <%= f.label :instruments_played, 'My Instrument' %>
-  <%= f.collection_select :instruments_played, @instrument_played, :first, :last %>
-
-  <%= f.label :favotorite_genre, "Favorite Genre" %>
-  <%= f.collection_select :favotorite_genre, @favotie_genre, :first, :last %>
-
-  <%= f.label :about_me, "About Me" %>
-  <%= f.text_area :about_me, :size => "5x4" %>
-
-  <div class='submit-container'>
-    <%= f.submit "Update Profile", class: 'button' %>
+<section class='test'>
+  <div class='parallax-small parallax-small__profile-page--edit'>
+    <div class="parallax-small--title"> Edit Profile </div>
   </div>
-  <% end %>
+</section>
 
-  <a href='/users/<%= @user.id %>'>Go Back</a>
+  <div class='bumper-25'></div>
+  <div class='bumper-25'></div>
 
-  <% if @user.errors.any? %>
-    <% @user.errors.full_messages.each do |error| %>
-      <p><%= error %></p>
+
+<section>
+  <div class="login-box">
+    <%= form_for(@user) do |f| %>
+
+    <!-- <div class="field">
+      <%= f.label :email, "Email" %>
+      <%= f.email_field :email, autofocus: true, :input_html => { :value => @user.email} %>
+    </div> -->
+
+    <div class="field">
+    <%= f.label :instruments_played, 'My Instrument' %>
+    <%= f.collection_select :instruments_played, @instrument_played, :first, :last %>
+    </div>
+
+    <div class="field">
+    <%= f.label :favotorite_genre, "Favorite Genre" %>
+    <%= f.collection_select :favotorite_genre, @favorite_genre, :first, :last %>
+    </div>
+
+    <div class="field">
+    <%= f.label :years_experience, 'Years of Experience' %>
+    <%= f.collection_select :years_experience, @experience, :first, :last %>
+    </div>
+
+    <div class="field">
+    <%= f.file_field :profile_photo %>
+    </div>
+
+    <div class="field">
+    <%= f.label :about_me, "About Me" %>
+    <%= f.text_area :about_me, :size => "5x4" %>
+    </div>
+
+    <div class='submit-container'>
+      <%= f.submit "Update Profile", class: 'button' %>
+    </div>
     <% end %>
-<% end %>
+
+    <a href='/users/<%= @user.id %>'>Go Back</a>
+  </div>
+
+</section>
+
+<div class='bumper-25'></div>
+<div class='bumper-25'></div>

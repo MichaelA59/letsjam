@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-  before_action :authorize_user
+  # before_action :authorize_user
   before_action :configure_permitted_parameters, if: :devise_controller?
 
 
   def index
     @current_user = current_user
     @users = User.all
+    @user = @current_user
   end
 
   def show
@@ -16,7 +17,8 @@ class UsersController < ApplicationController
   def edit
     @user = current_user
     @instrument_played = User::INSTRUMENTS
-    @favotie_genre = User::FAVOTITE_GENRE
+    @favorite_genre = User::FAVOTITE_GENRE
+    @experience = User::YEARS
   end
 
   def update
@@ -40,7 +42,9 @@ class UsersController < ApplicationController
       :about_me,
       :profile_photo,
       :instruments_played,
-      :favotorite_genre )
+      :favotorite_genre,
+      :years_experience
+    )
   end
 
   protected

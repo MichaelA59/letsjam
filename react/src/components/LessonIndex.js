@@ -8,12 +8,15 @@ class LessonIndex extends Component {
   }
 
   render() {
+
+    let url = this.props.instrument + '.png'
+
     return(
       <div className='column column-block text-center'>
         <div className='lesson-card'>
 
           <div className='lesson-card--img-wrapper'>
-            <img src='https://unsplash.it/300' className='lesson-card--img'/>
+          <img src={assetHelper[url]} className='lesson-card--img'/>
           </div>
 
           <div className='lesson-card--info'>

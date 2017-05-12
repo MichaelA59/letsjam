@@ -7,10 +7,10 @@ const Choice = (props) => {
       <div>
         <div className='row choice-container'>
           <div className="small-12 medium-6 small-centered columns text-right">
-            <a href='#users-list' className='button'>I'm a Teacher</a>
+            <a href='/users/sign_up' className='button'>I'm a Teacher</a>
           </div>
           <div className= "small-12 medium-6 small-centered columns text-left">
-            <a href='#users-list' className='button'>I'm a Student</a>
+            <a href='/users/sign_up' className='button'>I'm a Student</a>
           </div>
         </div>
       </div>

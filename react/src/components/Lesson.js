@@ -23,12 +23,13 @@ class Lesson extends Component {
     let handleClick = () => {
       this.handleChangeClassName();
     }
-
+    let url = this.props.instrument + '.png'
+    
     return (
       <div className={'lesson-card lesson-card__' + this.state.vacancy} onClick={handleClick}>
 
         <div className='lesson-card--img-wrapper'>
-          <img src='https://unsplash.it/400?random'/>
+          <img src={assetHelper[url]}/>
         </div>
 
         <div className='lesson-card--info'>
