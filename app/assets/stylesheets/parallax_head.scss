@@ -153,8 +153,32 @@ $white: #ffffff;
       top: 0; right: 0; bottom: 0; left: 0;
     }
   }
-
-
+  &__lesson-page {
+    &::before {
+      content: '';
+      background-image: url('sheet');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+    }
+  }
+  &__login-page {
+    &::before {
+      content: '';
+      background-image: url('pianohead');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+    }
+  }
 
   &--title {
     font-family: 'Montserrat';
