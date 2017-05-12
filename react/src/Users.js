@@ -8,39 +8,21 @@ class Users extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userType: null,
       users: []
     }
-    this.handleChangeUserTypeStudent = this.handleChangeUserTypeStudent.bind(this)
-    this.handleChangeUserTypeTeacher = this.handleChangeUserTypeTeacher.bind(this)
     this.displayListOfUsers = this.displayListOfUsers.bind(this);
   }
 
-  handleChangeUserTypeStudent() {
-    this.setState({ userType: true})
-    this.displayListOfUsers()
-  }
-
-  handleChangeUserTypeTeacher() {
-    this.setState({ userType: false})
-    this.displayListOfUsers()
-  }
-
   displayListOfUsers() {
-    let whichUser;
-    if (this.state.userType) {
-      whichUser = 'teachers'
-      // Because we want to see Teachers if we want to LEARN
-      // So it needs to be reversed
-    } else {
-      whichUser = 'students'
-    }
-
-    fetch(`api/v1/${whichUser}`)
+    fetch('api/v1/teachers')
       .then(response => response.json())
       .then(useableUserData => {
         this.setState({ users: useableUserData })
       })
+    }
+
+    componentDidMount() {
+      this.displayListOfUsers();
     }
 
   render() {
@@ -51,51 +33,60 @@ class Users extends Component {
           id={user.id}
           photo={user.profile_photo}
           email={user.email}
-          username={user.username}
+          firstname={user.first_name}
+          lastname={user.last_name}
         />
       )
     })
 
-    let userListHeader = '';
-    if (this.state.userType) {
-      userListHeader = 'Available Teachers'
-    } else {
-      userListHeader = 'Available Students'
-    }
-
-      return (
-        <div>
-          <section className='test'>
-            <div className='parallax'>
-              <div className='filler-content'>
-                <div id='question'> Connecting Teachers & Talent </div>
-                <Choice
-                  onButtonClickStudent={this.handleChangeUserTypeStudent}
-                  onButtonClickTeacher={this.handleChangeUserTypeTeacher}
-                />
-              </div>
+    return (
+      <div>
+        <section className='test'>
+          <div className='parallax'>
+            <div className='filler-content'>
+              <div id='question'> Music Lessons for the Digital Age </div>
+              <div id='question-sub'> Connect online with Teachers & Students </div>
+              <Choice />
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section>
-            <div className="container">
-              <h1 id='users-list'> {userListHeader} </h1>
-              <h3 className='text-center'><Link to="/lessons"> View All Lessons </Link></h3>
-              <div className='row small-up-1 medium-up-2 large-up-3'>
-                {users}
-              </div>
-            </div>
-          </section>
+        <section>
+          <div className="container">
 
-          <section>
+            <div className='bumper-25'/>
+            <div className='bumper-25'/>
+
             <div className='row'>
-              <div className='columns small-12 small-centered text-center'>
-                <a href='#top-bar' className='button'>Back to Top</a>
+              <div className='columns small-6'>
+                <h1 id='users-list'> Top Teachers </h1>
+              </div>
+
+              <div className='columns small-6 text-right'>
+                <Link to="/lessons" className='view-all-lessons'> View All Lessons </Link>
               </div>
             </div>
-          </section>
-        </div>
-      )
+
+            <div className='bumper-25'/>
+
+            <div className='row small-up-1 medium-up-2 large-up-3'>
+              {users}
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div className='row'>
+            <div className='columns small-12 small-centered text-center'>
+              <a href='#top-bar' className='button'>Back to Top</a>
+            </div>
+          </div>
+        </section>
+
+        <div className='bumper-100'/>
+
+      </div>
+    )
   }
 }
 

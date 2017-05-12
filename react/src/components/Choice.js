@@ -6,16 +6,15 @@ const Choice = (props) => {
     return(
       <div>
         <div className='row choice-container'>
-          <div className="button small-6 small-centered columns" onClick={props.onButtonClickStudent}>
-            <a href='#users-list'>I want to learn</a>
+          <div className="small-12 medium-6 small-centered columns text-right">
+            <a href='#users-list' className='button'>I'm a Teacher</a>
           </div>
-        </div>
-        <div className='row choice-container'>
-          <div className= "button small-6 small-centered columns" onClick={props.onButtonClickTeacher}>
-            <a href='#users-list'>I want to teach</a>
+          <div className= "small-12 medium-6 small-centered columns text-left">
+            <a href='#users-list' className='button'>I'm a Student</a>
           </div>
         </div>
       </div>
+
     )
   }
 

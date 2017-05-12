@@ -65,8 +65,16 @@ $white: #ffffff;
   background-color: transparent;
   color: $white;
   position: absolute;
-  z-index: 999;
   width: 100%;
+  z-index: 999;
+
+  ul {
+    background-color: transparent;
+  }
+
+  .menu > li > a {
+    color: $white;
+  }
 
   .top-bar-left {
     background-color: transparent;
@@ -80,17 +88,18 @@ $white: #ffffff;
     }
   }
 
-  .top-bar-right {
+  .right-nav {
     background-color: transparent;
 
     .menu {
       background-color: transparent;
 
       li {
+        display: inline-block;
         background-color: transparent;
 
         a {
-          color: $white;
+          color: $white !important;
           background-color: transparent;
         }
       }

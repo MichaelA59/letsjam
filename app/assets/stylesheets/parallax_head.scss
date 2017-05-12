@@ -36,45 +36,18 @@ $white: #ffffff;
   z-index: 10;
 
   .button {
-    margin: 10px;
-    padding: 10px;
-    border: 2px solid $low-opacity-white;
-    text-align: center;
+    margin: 5px;
+    padding: 15px;
     position: relative;
-    overflow:hidden;
-    transition: .5s;
-    border-radius: 50px;
-    font-size: 2em;
-    max-width: 12em;
+    transition: .2s;
+    border-radius: 5px;
+    font-size: 22px;
     font-family: "Montserrat";
-    background: rgba(44, 56, 64, 0.83);
-
-    &:after {
-      position: absolute;
-      transition: 1s;
-      content: '';
-      width: 0;
-      left: 50%;
-      bottom: 0;
-      height: 3px;
-      background: rgba(44, 56, 64, 0.83);
-    }
+    background: #509b47;
 
     &:hover {
       cursor: pointer;
-      background: rgb(8,186,5);
-
-      &:after {
-        width: 100%;
-        left: 0;
-      }
-
-      &:nth-of-type(1) {
-        transform: scale(1.1);
-      }
-      &:nth-of-type(1):after {
-        width: 0%;
-      }
+      background: #60AE57;
     }
     a {
       color: $white;
@@ -91,16 +64,28 @@ $white: #ffffff;
 }
 
 #question {
-  font-size: 2.5em;
+  font-size: 3em;
   font-weight: 500;
   font-family: 'Montserrat';
   color: $white;
   text-align: center;
   text-shadow: 2px 2px 2px black;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+
+#question-sub {
+  font-size: 1.2em;
+  font-weight: 100;
+  font-family: 'Montserrat';
+  color: $white;
+  text-align: center;
+  text-shadow: 2px 2px 2px black;
+  margin-bottom: 35px;
 }
 
 .parallax {
-  height: 1000px;
+  height: 70vh;
   &::before {
     content: '';
     background-image: url('music-background');
