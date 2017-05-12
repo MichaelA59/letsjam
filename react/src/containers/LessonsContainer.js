@@ -59,7 +59,6 @@ class LessonsContainer extends Component {
 
     return(
       <div>
-        <h3> My Lessons </h3>
         {lessons}
       </div>
     )

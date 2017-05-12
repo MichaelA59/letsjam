@@ -39,18 +39,33 @@ class LessonList extends Component {
     })
     return(
       <div>
+
+        <section className='test'>
+          <div className='parallax-small parallax-small__lessons-page'>
+            <div className="parallax-small--title"> All Available Lessons </div>
+          </div>
+        </section>
+
+        <div className='bumper-25'></div>
+        <div className='bumper-25'></div>
+
         <section>
           <div className='container'>
-            <h1> All Available Lessons </h1>
             <div className='row small-up-1 medium-up-2 large-up-3'>
               {lessonsIndex}
             </div>
           </div>
         </section>
 
+        <section>
+          <div className='row'>
+            <div className='columns small-12 small-centered text-center'>
+              <Link to='/' className='button'> Home </Link>
+            </div>
+          </div>
+        </section>
 
-        <Link to='/'> Home </Link>
-
+        <div className='bumper-100'></div>
       </div>
 
     )

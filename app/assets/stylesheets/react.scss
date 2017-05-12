@@ -38,6 +38,48 @@
   }
 }
 
+.lesson-card {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 2px 50px rgba(0,0,0,.2);
+  margin-bottom: 20px;
+
+  &__unavailable {
+    // opacity: .3;
+  }
+  &--img-wrapper{
+    overflow: hidden;
+    height: 130px;
+    position: relative;
+  }
+
+  &--img {
+    width: 150%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+  }
+
+  &--info{
+    padding: 20px;
+
+    &__name {
+      font-size: 18px;
+      margin-bottom: 10px;
+
+      a {
+        color: #404040;
+      }
+    }
+
+    &__instrument, &__difficulty, &__date {
+      font-size: 14px;
+      color: #828282;
+    }
+  }
+}
+
 #users-list {
   font-family: 'Montserrat';
   font-size: 24px;
@@ -53,18 +95,4 @@
   color:#333;
   margin-top: 35px;
   display: inline-block;
-}
-
-.available {
-  border: 2px solid green;
-  margin: 1em;
-  background: #f3f3f3;
-  box-shadow: 2px 2px black;
-}
-
-.unavailable {
-  border: 2px solid red;
-  margin: 1em;
-  background: #f3f3f3;
-  box-shadow: 2px 2px black;
 }
