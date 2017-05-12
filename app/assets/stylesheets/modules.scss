@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Open+Sans|Montserrat|Raleway|Merriweather:300,400,700|Montserrat:400,500,600,700');
+
+.user-card {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 2px 50px rgba(0,0,0,.2);
+
+  &--img-wrapper{
+    overflow: hidden;
+    height: 200px;
+    position: relative;
+  }
+
+  &--img {
+    width: 100%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+  }
+
+  &--info{
+    padding: 20px;
+
+    &__name {
+      font-size: 18px;
+      margin-bottom: 10px;
+
+      a {
+        color: #404040;
+      }
+    }
+
+    &__instrument, &__experience {
+      font-size: 14px;
+      color: #828282;
+    }
+  }
+}
+
+.lesson-card {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 2px 50px rgba(0,0,0,.2);
+  margin-bottom: 20px;
+
+  &__unavailable {
+    // opacity: .3;
+  }
+
+  // Instrument Images
+  &--img-wrapper{
+    overflow: hidden;
+    height: 130px;
+    position: relative;
+  }
+
+  &--img {
+    width: 150%; // Maybe try 100% and perhaps remove everything else below this?
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+  }
+
+  &--info{
+    padding: 20px;
+
+    &__name {
+      font-size: 18px;
+      margin-bottom: 10px;
+
+      a {
+        color: #404040;
+      }
+    }
+
+    &__instrument, &__difficulty, &__date {
+      font-size: 14px;
+      color: #828282;
+    }
+  }
+}
+
+.profile-card {
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  &--img-wrapper{
+    overflow: hidden;
+    position: relative;
+    border-radius: 100%;
+    border: 10px solid #fff;
+    height: 175px;
+    width: 175px;
+    box-shadow: 0px 0px 20px rgba(0,0,0,.2);
+    float: left;
+  }
+
+  &--img {
+    width: 150%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+  }
+
+  &--main-info{
+    float: left;
+    margin-left: 40px;
+    padding: 20px;
+
+    &__name {
+      font-size: 18px;
+      margin-bottom: 10px;
+
+      a {
+        color: #404040;
+      }
+    }
+  }
+  &--additional-info {
+    margin: 0 20px;
+    &__instrument, &__genre, &__about {
+      font-size: 16px;
+    }
+  }
+}
+
+
+
+#users-list {
+  font-family: 'Montserrat';
+  font-size: 24px;
+  font-weight: 600;
+  color:#333;
+  margin-top: 1em;
+}
+
+.view-all-lessons {
+  font-family: 'Montserrat';
+  font-size: 16px;
+  font-weight:500;
+  color:#333;
+  margin-top: 35px;
+  display: inline-block;
+}

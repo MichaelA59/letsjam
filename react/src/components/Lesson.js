@@ -23,12 +23,20 @@ class Lesson extends Component {
     let handleClick = () => {
       this.handleChangeClassName();
     }
+
     return (
-      <div className={this.state.vacancy} onClick={handleClick}>
-        <h3>Instrument: {this.props.instrument}</h3>
-        <h3>Difficulty: {this.props.skillLevel}</h3>
-        <h3>Date: {this.props.date}</h3>
-        <button className='button' onClick={this.props.handleJoin}>Join this Lesson</button>
+      <div className={'lesson-card lesson-card__' + this.state.vacancy} onClick={handleClick}>
+
+        <div className='lesson-card--img-wrapper'>
+          <img src='https://unsplash.it/400?random'/>
+        </div>
+
+        <div className='lesson-card--info'>
+          <div className='lesson-card--info__instrument'>Instrument: {this.props.instrument}</div>
+          <div className='lesson-card--info__difficulty'>Difficulty: {this.props.skillLevel}</div>
+          <div className='lesson-card--info__date'>Date: {this.props.date}</div>
+          <button className='lesson-card--info__cta' onClick={this.props.handleJoin}>Join this Lesson</button>
+      </div>
       </div>
     )
   }

@@ -9,11 +9,20 @@ class LessonIndex extends Component {
 
   render() {
     return(
-      <div className='column column-block lessons-from-lessons-index-page text-center'>
-        <h3>Instrument: {this.props.instrument}</h3>
-        <h3>Difficulty: {this.props.skill}</h3>
-        <h3>Date: {this.props.date}</h3>
-        <a href={`/users/${this.props.teacher}`}> Check it Out! </a>
+      <div className='column column-block text-center'>
+        <div className='lesson-card'>
+
+          <div className='lesson-card--img-wrapper'>
+            <img src='https://unsplash.it/300' className='lesson-card--img'/>
+          </div>
+
+          <div className='lesson-card--info'>
+            <div className='lesson-card--info__instrumment'>Instrument: {this.props.instrument}</div>
+            <div className='lesson-card--info__difficulty'>Difficulty: {this.props.skill}</div>
+            <div className='lesson-card--info__date'>Date: {this.props.date}</div>
+            <a href={`/users/${this.props.teacher}`} className='lesson-card--info__cta'> Check it Out! </a>
+          </div>
+        </div>
       </div>
     )
   }
