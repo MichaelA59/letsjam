@@ -16,7 +16,8 @@ class UsersController < ApplicationController
   def edit
     @user = current_user
     @instrument_played = User::INSTRUMENTS
-    @favotie_genre = User::FAVOTITE_GENRE
+    @favorite_genre = User::FAVOTITE_GENRE
+    @experience = User::YEARS
   end
 
   def update
@@ -40,7 +41,9 @@ class UsersController < ApplicationController
       :about_me,
       :profile_photo,
       :instruments_played,
-      :favotorite_genre )
+      :favotorite_genre,
+      :years_experience
+    )
   end
 
   protected

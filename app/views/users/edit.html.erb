@@ -8,7 +8,10 @@
   <%= f.collection_select :instruments_played, @instrument_played, :first, :last %>
 
   <%= f.label :favotorite_genre, "Favorite Genre" %>
-  <%= f.collection_select :favotorite_genre, @favotie_genre, :first, :last %>
+  <%= f.collection_select :favotorite_genre, @favorite_genre, :first, :last %>
+
+  <%= f.label :years_experience, 'Years of Experience' %>
+  <%= f.collection_select :years_experience, @experience, :first, :last %>
 
   <%= f.label :about_me, "About Me" %>
   <%= f.text_area :about_me, :size => "5x4" %>
@@ -19,9 +22,3 @@
   <% end %>
 
   <a href='/users/<%= @user.id %>'>Go Back</a>
-
-  <% if @user.errors.any? %>
-    <% @user.errors.full_messages.each do |error| %>
-      <p><%= error %></p>
-    <% end %>
-<% end %>

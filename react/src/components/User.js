@@ -13,8 +13,8 @@ const User = (props) => {
 
         <div className='user-card--info'>
           <div className='user-card--info__name'><a href={`/users/${props.id}`}>{props.firstname} {props.lastname}</a></div>
-          <div className='user-card--info__instrument'>Guitar Teacher Placeholder</div>
-          <div className='user-card--info__experience'>10 Years Placeholder</div>
+          <div className='user-card--info__instrument'>{props.instrument} Teacher</div>
+          <div className='user-card--info__experience'>{props.experience} Years Experience</div>
         </div>
       </div>
     </div>
