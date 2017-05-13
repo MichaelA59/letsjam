@@ -8,33 +8,33 @@
 <div class='bumper-25'></div>
 
 <section>
-<div class='login-box'>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
+  <div class='login-form'>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+      <div class="login-form--field">
+        <%= f.label :email, 'Email' %>
+        <%= f.email_field :email, autofocus: true %>
       </div>
-    <% end -%>
 
-    <div class="actions">
-      <%= f.submit "Log in" %>
-    </div>
+      <div class="login-form--field">
+        <%= f.label :password, 'Password' %>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
 
-    <%= render "devise/shared/links" %>
-    <br />
-  <% end %>
-</div>
+      <% if devise_mapping.rememberable? -%>
+        <div class="login-form--field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end -%>
+
+      <div class="login-form--field__submit-container">
+        <%= f.submit "Log in", class: 'button' %>
+      </div>
+
+      <%= render "devise/shared/links" %>
+    <% end %>
+  </div>
 </section>
 
 <div class='bumper-25'></div>
