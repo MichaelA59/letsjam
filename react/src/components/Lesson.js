@@ -29,7 +29,7 @@ class Lesson extends Component {
       <div className={'lesson-card lesson-card__' + this.state.vacancy} onClick={handleClick}>
 
         <div className='lesson-card--img-wrapper'>
-          <img src={assetHelper[url]}/>
+          <img className='lesson-card--img' src={assetHelper[url]}/>
         </div>
 
         <div className='lesson-card--info'>

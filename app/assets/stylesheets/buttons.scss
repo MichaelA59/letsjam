@@ -1,0 +1,25 @@
+@import "variables";
+
+.button {
+  margin: 5px;
+  padding: 15px;
+  position: relative;
+  transition: .2s;
+  border-radius: 5px;
+  font-size: 22px;
+  font-family: "Montserrat";
+  background: #509b47;
+  height:auto;
+  &__outline {
+    background: transparent;
+    border:2px solid #509b47;
+    color: #509b47;
+  }
+  &:hover {
+    cursor: pointer;
+    background: #60AE57;
+  }
+  a {
+    color: $white;
+  }
+}

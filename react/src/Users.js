@@ -26,7 +26,6 @@ class Users extends Component {
   }
 
   whichUserGroup() {
-    debugger
     if (this.state.currentUser.is_student) {
       this.setState({ teachOrStud: 'teachers'})
     } else {

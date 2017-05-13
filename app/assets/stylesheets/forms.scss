@@ -1,61 +1,181 @@
-@import url('https://fonts.googleapis.com/css?family=Lobster|Open+Sans|Montserrat|Raleway|Merriweather:300,400,700|Montserrat:400,500,600,700');
-$black: #000000;
-$grey-shadow: #999;
-$venue-form-background-color: rgba(63, 72, 84, 1);
-$subtle-card-outline: rgba(0, 0, 0, 0.18);
-$input-background-color: rgba(255, 255, 255, 0.54);
-$low-opacity-white: rgba(255, 255, 255, 0.22);
-$text-shadow: 2px 2px 10px $black;
-$nav-back-color: #2C3840;
-$white: #ffffff;
-$input-text-color: #092c44;
+@import "variables";
 
-.new_user {
-  width: 500px;
-  margin: 0 auto;
-  display: grid;
-  text-align: center;
-  height: auto;
-  background: hsla(204, 27%, 69%, 0.21);
-  border-radius: 5px;
-  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
-  padding: 25px;
+// .new_user {
+//   width: 500px;
+//   margin: 0 auto;
+//   display: grid;
+//   text-align: center;
+//   height: auto;
+//   background: hsla(204, 27%, 69%, 0.21);
+//   border-radius: 5px;
+//   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
+//   padding: 25px;
+//
+//   &--field {
+//     margin: 0 auto;
+//
+//     label {
+//       float: left;
+//     }
+//
+//     input {
+//       float: right;
+//     }
+//
+//     &__submit-container {
+//
+//       .button{
+//         margin: 10px;
+//         padding: 10px;
+//         position: relative;
+//         transition: .2s;
+//         border-radius: 5px;
+//         font-size: 15px;
+//         font-family: "Montserrat";
+//         background: #509b47;
+//
+//         &:hover {
+//           cursor: pointer;
+//           background: #60AE57;
+//         }
+//         a {
+//           color: white;
+//
+//           &:hover {
+//             color: white;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
-  &--field {
-    margin: 0 auto;
 
-    label {
-      float: left;
+// Form Modules
+.signup-form {
+  position: relative;
+  margin: 3% auto;
+  width: 800px;
+  height: 725px;
+  background: #FFF;
+  border-radius: 2px;
+  border: 1px solid $subtle-card-outline;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+  &--left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 38px;
+    width: 350px;
+    height: 650px;
+  }
+
+  &--right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 400px;
+    height: 725px;
+    background: url('https://reverb-res.cloudinary.com/image/upload/s--0TJ8QoiW--/a_exif,c_limit,f_auto,fl_progressive,g_south,q_auto:eco,w_400/v1409679814/zjwlediy4tiaywc00qht.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 2px 2px 0;
+
+    &--title {
+      display: block;
+      margin-top: 8%;
+      margin-bottom: 60px;
+      font-size: 35px;
+      font-weight: 600;
+      text-shadow: 2px 2px $black;
+      color: #FFF;
+      text-align: center;
     }
 
-    input {
-      float: right;
-    }
+    &--social-buttons {
+      margin-bottom: 35px;
+      margin-left: 15%;
+      width: 220px;
+      height: 36px;
+      border: none;
+      box-shadow: 1px 2px 9px $grey-shadow;
+      border-radius: 2px;
+      color: #FFF;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      transition: 0.2s ease;
+      cursor: pointer;
 
-    &__submit-container {
+      &:hover,
+      &:focus {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        transition: 0.2s ease;
+      }
 
-      .button{
-        margin: 10px;
-        padding: 10px;
-        position: relative;
-        transition: .2s;
-        border-radius: 5px;
-        font-size: 15px;
-        font-family: "Montserrat";
-        background: #509b47;
+      &:active {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        transition: 0.2s ease;
+      }
 
-        &:hover {
-          cursor: pointer;
-          background: #60AE57;
-        }
-        a {
-          color: white;
+      &__facebook {
+        background: #32508E;
+      }
 
-          &:hover {
-            color: white;
-          }
-        }
+      &__linkedin {
+        background: #55ACEE;
+      }
+
+      &__google {
+        background: #DD4B39;
       }
     }
   }
+
+  &--or {
+    position: absolute;
+    top: 310px;
+    left: 380px;
+    width: 40px;
+    height: 40px;
+    background: #DDD;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    line-height: 40px;
+    text-align: center;
+    z-index: 10;
+  }
+}
+
+.form-box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(0,0,0,.035);
+  border-radius: 7px;
+}
+
+
+
+
+// Global Form Styling
+
+input {
+  margin-bottom: 20px;
+  padding: 4px;
+  height: 38px;
+  border-bottom: 1px solid #BFB493;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+input:focus {
+  border-bottom: 2px solid $nav-back-color;
+  color: $input-text-color;
+  transition: 0.2s ease;
 }

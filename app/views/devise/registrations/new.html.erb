@@ -7,11 +7,11 @@
 <div class='bumper-25'></div>
 <div class='bumper-25'></div>
 <section>
-  <div class='login-signup-box'>
+  <div class='signup-form'>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
     <!-- LEFT SIDE FORM -->
-    <div class="left">
+    <div class="signup-form--left">
       <%= f.label :first_name, "First Name" %>
       <%= f.text_field :first_name, autofocus: true %>
       <!-- <p class='error'><%= show_errors(resource, 'First name') %></p> -->
@@ -38,29 +38,34 @@
       <%= f.label :password_confirmation, "Password Confirmation" %>
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
 
-      <%= f.radio_button :is_student, true %>
-      <%= f.label :is_student, "Student", value: true %>
-
-      <%= f.radio_button :is_student, false %>
-      <%= f.label :is_student, "Teacher", value: false %>
+      <div class="row">
+        <div class="columns small-3">
+          <%= f.label :is_student, "Student", value: true %>
+          <%= f.radio_button :is_student, true %>
+        </div>
+        <div class="columns small-3">
+          <%= f.label :is_student, "Teacher", value: false %>
+          <%= f.radio_button :is_student, false %>
+        </div>
+      </div>
 
       <%= f.file_field :profile_photo %>
 
-      <div class='form-actions'>
-        <%= f.submit "Sign Up" %>
+      <div class='text-center'>
+        <%= f.submit "Sign Up", class: 'button' %>
       </div>
     </div>
     <!-- END LEFT SIDE FORM -->
 
-    <div class="or">OR</div>
+    <div class="signup-form--or">OR</div>
 
     <!-- RIGHT SIDE FORM -->
-    <div class="right">
-      <span class="loginwith">Sign in with<br />Social Media</span>
+    <div class="signup-form--right">
+      <span class="signup-form--right--title">Sign in with<br />Social Media</span>
 
-      <button class="social-signin facebook">Log in with Facebook</button>
-      <button class="social-signin twitter">Log in with LinkedIn</button>
-      <button class="social-signin google">Log in with Google</button>
+      <button class="signup-form--right--social-buttons signup-form--right--social-buttons__facebook">Log in with Facebook</button>
+      <button class="signup-form--right--social-buttons signup-form--right--social-buttons__linkedin">Log in with LinkedIn</button>
+      <button class="signup-form--right--social-buttons signup-form--right--social-buttons__google">Log in with Google</button>
     </div>
     <!-- END RIGHT SIDE FORM -->
     <% end %>
