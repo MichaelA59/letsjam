@@ -6,7 +6,7 @@
 
 <div class='bumper-25'></div>
 <div class='bumper-25'></div>
-
+<section>
   <div class='login-signup-box'>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
@@ -64,11 +64,17 @@
     </div>
     <!-- END RIGHT SIDE FORM -->
     <% end %>
+  </section>
 
     <!-- <%= devise_error_messages! %> -->
 
-  </div>
-
+    <section>
+      <div className='row'>
+        <div className='columns small-12 small-centered text-center'>
+          <a href='/' className='button'>Home</a>
+        </div>
+      </div>
+    </section>
 
 <div class='bumper-25'></div>
 <div class='bumper-25'></div>

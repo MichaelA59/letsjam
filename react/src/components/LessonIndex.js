@@ -23,7 +23,9 @@ class LessonIndex extends Component {
             <div className='lesson-card--info__instrumment'>Instrument: {this.props.instrument}</div>
             <div className='lesson-card--info__difficulty'>Difficulty: {this.props.skill}</div>
             <div className='lesson-card--info__date'>Date: {this.props.date}</div>
-            <a href={`/users/${this.props.teacher}`} className='lesson-card--info__cta'> Check it Out! </a>
+            <div className='lesson-card--info__cta'>
+              <a href={`/users/${this.props.teacher}`}> Check it Out! </a>
+            </div>
           </div>
         </div>
       </div>

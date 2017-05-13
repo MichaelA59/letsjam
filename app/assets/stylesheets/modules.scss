@@ -81,16 +81,17 @@
     }
 
     &__cta {
-      margin: 2px;
+      margin: 0 auto;
       padding: 10px;
       position: relative;
-      transition: .5s;
+      transition: .3s;
       border-radius: 5px;
       font-size: 15px;
       font-family: "Montserrat";
       background: #509b47;
       text-align: center;
       color: white;
+      max-width: 50%;
 
       &:hover {
         cursor: pointer;
@@ -98,6 +99,10 @@
       }
       a {
         color: white;
+
+        &:hover {
+          color: white;
+        }
       }
     }
   }
