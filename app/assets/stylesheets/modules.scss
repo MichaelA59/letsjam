@@ -44,10 +44,6 @@
   box-shadow: 0px 2px 50px rgba(0,0,0,.2);
   margin-bottom: 20px;
 
-  &__unavailable {
-    // opacity: .3;
-  }
-
   // Instrument Images
   &--img-wrapper{
     overflow: hidden;
@@ -81,7 +77,7 @@
     }
 
     &__cta {
-      margin: 0 auto;
+      margin: 10px auto 0px;
       padding: 10px;
       position: relative;
       transition: .3s;
@@ -91,7 +87,10 @@
       background: #509b47;
       text-align: center;
       color: white;
-      max-width: 50%;
+
+      &.unavailable {
+        background-color: grey;
+      }
 
       &:hover {
         cursor: pointer;

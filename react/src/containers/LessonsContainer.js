@@ -40,8 +40,19 @@ class LessonsContainer extends Component {
 
   render() {
     let lessons = this.state.lessons.map (lesson => {
+
       let handleJoin = () => {
         this.handleSubmit(lesson.id, lesson.student_id)
+      }
+
+      let lessonButtonText;
+      let lessonVacancyClass = '';
+
+      if (lesson.student_id) {
+        lessonButtonText = 'Booked'
+        lessonVacancyClass = 'unavailable'
+      } else {
+        lessonButtonText = 'Book This Lesson'
       }
 
       return(
@@ -53,6 +64,8 @@ class LessonsContainer extends Component {
           date={lesson.date}
           studentId={lesson.student_id}
           handleJoin={handleJoin}
+          lessonButtonText={lessonButtonText}
+          lessonVacancyClass={lessonVacancyClass}
           />
       )
     })

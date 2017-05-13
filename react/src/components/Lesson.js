@@ -36,7 +36,7 @@ class Lesson extends Component {
           <div className='lesson-card--info__instrument'>Instrument: {this.props.instrument}</div>
           <div className='lesson-card--info__difficulty'>Difficulty: {this.props.skillLevel}</div>
           <div className='lesson-card--info__date'>Date: {this.props.date}</div>
-          <div className='lesson-card--info__cta' onClick={this.props.handleJoin}>Join this Lesson</div>
+          <div className={'lesson-card--info__cta ' + this.props.lessonVacancyClass} onClick={this.props.handleJoin}>{this.props.lessonButtonText}</div>
       </div>
       </div>
     )
