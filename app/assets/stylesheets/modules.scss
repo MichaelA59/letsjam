@@ -79,6 +79,27 @@
       font-size: 14px;
       color: #828282;
     }
+
+    &__cta {
+      margin: 2px;
+      padding: 10px;
+      position: relative;
+      transition: .5s;
+      border-radius: 5px;
+      font-size: 15px;
+      font-family: "Montserrat";
+      background: #509b47;
+      text-align: center;
+      color: white;
+
+      &:hover {
+        cursor: pointer;
+        background: #60AE57;
+      }
+      a {
+        color: white;
+      }
+    }
   }
 }
 
