@@ -8,22 +8,44 @@ class Users extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: []
+      users: [],
+      currentUser: {},
+      teachOrStud: 'teachers'
     }
     this.displayListOfUsers = this.displayListOfUsers.bind(this);
+    this.fetchCurrentUser = this.fetchCurrentUser.bind(this);
+    this.whichUserGroup = this.whichUserGroup.bind(this)
+  }
+
+  fetchCurrentUser() {
+    fetch('api/v1/users', {credentials: 'same-origin'})
+      .then(response => response.json())
+      .then(currentUserResponse => {
+        this.setState({ currentUser: currentUserResponse.currentUser})
+      })
+  }
+
+  whichUserGroup() {
+    if (this.state.currentUser.is_student) {
+      this.setState({ teachOrStud: 'teachers'})
+    } else {
+      this.setState({ teachOrStud: 'students'})
+    }
   }
 
   displayListOfUsers() {
-    fetch('api/v1/teachers')
+    fetch(`api/v1/${this.state.teachOrStud}`)
       .then(response => response.json())
       .then(useableUserData => {
         this.setState({ users: useableUserData })
       })
     }
 
-    componentDidMount() {
-      this.displayListOfUsers();
-    }
+  componentWillMount() {
+    this.fetchCurrentUser();
+    this.whichUserGroup();
+    this.displayListOfUsers();
+  }
 
   render() {
     let users = this.state.users.map(user => {
@@ -61,7 +83,7 @@ class Users extends Component {
 
             <div className='row'>
               <div className='columns small-6'>
-                <h1 id='users-list'> Top Teachers </h1>
+                <h1 id='users-list'> Top {this.state.teachOrStud} </h1>
               </div>
 
               <div className='columns small-6 text-right'>
