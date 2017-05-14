@@ -4,7 +4,19 @@
   </div>
 </section>
 
-<div class='bumper-100'></div>
+<div class='bumper-25'></div>
+<div class='bumper-25'></div>
+
+<% if @lesson.errors.any? %>
+  <section>
+    <ul class='text-center'>
+      <% @lesson.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </section>
+  <div class='bumper-25'></div>
+<% end %>
 
 <section>
   <div class='form-box'>
@@ -35,12 +47,5 @@
 
   </div>
 </section>
-<!-- <% if @lesson.errors.any? %>
-<ul>
-<% @lesson.errors.full_messages.each do |msg| %>
-<li><%= msg %></li>
-<% end %>
-</ul>
-<% end %> -->
 
 <div class='bumper-100'></div>

@@ -30,14 +30,12 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new(lesson_params)
     @lesson.teacher_id = @user.id
     if @lesson.save
-
       flash[:notice] = 'Lesson added successfully!'
       redirect_to @user
     else
-
       @instrument_collection = Lesson::INSTRUMENTS
       @skill_level_collection = Lesson::SKILL_LEVELS
-      @date_collection = Lesson::DATE
+      render :new
     end
   end
 
@@ -54,7 +52,6 @@ class LessonsController < ApplicationController
     else
       @instrument_collection = Lesson::INSTRUMENTS
       @skill_level_collection = Lesson::SKILL_LEVELS
-      @date_collection = Lesson::DATE
       render :edit
     end
   end

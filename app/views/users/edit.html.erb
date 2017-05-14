@@ -10,24 +10,24 @@
   <div class="form-box">
     <%= form_for(@user) do |f| %>
 
-    <%= f.label :instruments_played, 'My Instrument' %>
-    <%= f.collection_select :instruments_played, @instrument_played, :first, :last %>
+      <%= f.label :instruments_played, 'My Instrument' %>
+      <%= f.collection_select :instruments_played, @instrument_played, :first, :last %>
 
-    <%= f.label :favotorite_genre, "Favorite Genre" %>
-    <%= f.collection_select :favotorite_genre, @favorite_genre, :first, :last %>
+      <%= f.label :favotorite_genre, "Favorite Genre" %>
+      <%= f.collection_select :favotorite_genre, @favorite_genre, :first, :last %>
 
-    <%= f.label :years_experience, 'Years of Experience' %>
-    <%= f.collection_select :years_experience, @experience, :first, :last %>
+      <%= f.label :years_experience, 'Years of Experience' %>
+      <%= f.collection_select :years_experience, @experience, :first, :last %>
 
-    <%= f.file_field :profile_photo %>
+      <%= f.file_field :profile_photo %>
 
-    <%= f.label :about_me, "About Me" %>
-    <%= f.text_area :about_me, :size => "5x4" %>
+      <%= f.label :about_me, "About Me" %>
+      <%= f.text_area :about_me, :size => "5x4" %>
 
       <%= f.submit "Update Profile", class: 'button' %>
+
     <% end %>
   </div>
-
 </section>
 
 <div class='bumper-100'></div>
