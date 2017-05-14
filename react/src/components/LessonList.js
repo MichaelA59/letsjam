@@ -50,7 +50,7 @@ class LessonList extends Component {
         <div className='bumper-25'></div>
 
         <section>
-          <div className='container'>
+          <div className='container overflow-visible'>
             <div className='row small-up-1 medium-up-2 large-up-3'>
               {lessonsIndex}
             </div>

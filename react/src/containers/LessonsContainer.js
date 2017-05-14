@@ -22,7 +22,7 @@ class LessonsContainer extends Component {
         currentUser: usableLessonData.currentUser,
         lessons: usableLessonData.lessons,
         teacher: usableLessonData.teacher,
-        student: usableLessonData.student
+        student: usableLessonData.student,
       })
     })
   }
@@ -40,8 +40,26 @@ class LessonsContainer extends Component {
 
   render() {
     let lessons = this.state.lessons.map (lesson => {
-      let handleJoin = () => {
-        this.handleSubmit(lesson.id, lesson.student_id)
+
+      let handleJoin = (e) => {
+        if(e.target.classList.contains('unavailable')){
+          //debugger
+          if(e.target.classList.contains('shake-slow')) {
+            e.target.classList.remove('shake-slow');
+          }
+          e.target.classList.add('shake-slow');
+        }
+        this.handleSubmit( lesson.id, lesson.student_id)
+      }
+
+      let lessonButtonText;
+      let lessonVacancyClass = '';
+
+      if (lesson.student_id) {
+        lessonButtonText = 'Booked'
+        lessonVacancyClass = 'unavailable'
+      } else {
+        lessonButtonText = 'Book This Lesson'
       }
 
       return(
@@ -53,6 +71,9 @@ class LessonsContainer extends Component {
           date={lesson.date}
           studentId={lesson.student_id}
           handleJoin={handleJoin}
+          lessonButtonText={lessonButtonText}
+          lessonVacancyClass={lessonVacancyClass}
+          shake={this.state.shake}
           />
       )
     })

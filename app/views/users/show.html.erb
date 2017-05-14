@@ -26,9 +26,11 @@
             <div class='profile-card--main-info__email'>
               <p> <strong>Email</strong> | <%= @user.email %>  </p>
             </div>
-            <div class='profile-card--main-info__cta'>
-              <%= link_to 'Edit Profile', edit_user_path(@user), class: '' %>
-            </div>
+            <% if @user == @current_user %>
+              <div class='profile-card--main-info__cta'>
+                <%= link_to 'Edit Profile', edit_user_path(@user), class: '' %>
+              </div>
+            <% end %>
           </div>
 
           <div class="clearfix"></div>
@@ -68,7 +70,7 @@
 
       <div class='columns small-12 medium-3'>
         <h4><%= @user.first_name %>'s Lessons</h4>
-        <% if !@user.is_student? %>
+        <% if !@current_user.is_student? %>
           <%= link_to 'Add a lesson', new_lesson_path, class: '' %>
         <% end %>
         <div class="bumper-25"></div>
