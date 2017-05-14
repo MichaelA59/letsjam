@@ -83,7 +83,7 @@ class Users extends Component {
 
             <div className='row'>
               <div className='columns small-6'>
-                <h1 id='users-list'> Top {this.state.teachOrStud} </h1>
+                <h1 id='users-list'> Top Teachers </h1>
               </div>
 
               <div className='columns small-6 text-right'>
