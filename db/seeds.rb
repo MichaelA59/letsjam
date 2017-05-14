@@ -1,27 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 User.destroy_all
 Lesson.destroy_all
 
 # Top 9 Teachers
 
 User.create!(
-  first_name: 'Michael',
-  last_name: 'Adamski',
-  email: 'michael.adamski@gmail.com',
+  first_name: 'Jeff',
+  last_name: 'Robbins',
+  email: 'JRobz@gmail.com',
   password: 'password',
-  username: 'Mikea59',
+  username: 'JRob',
   is_student: false,
   instruments_played: "Bass",
   favotorite_genre: "Prog-Rock",
   years_experience: 13,
-  about_me: 'My name is Michael Adamski. I am currently accepting students for instruction in the Bass Guitar. I began
+  about_me: 'My name is Jeff. I am currently accepting students for instruction in the Bass Guitar. I began
   as a self-taught musician but quickly progressed. I have played in multiple bands spanning many genres over the years and
   also have experience in music production, having built my own music studio. I have recorded over a dozen albums over the years
   and hope to bring you to a level where you can develop a mastery of your instrument!'
@@ -123,6 +115,19 @@ User.create!(
   years_experience: 8,
   about_me: 'I have been playing Guitar for many years now. I play both Electric and Acoustic, so which ever you are interested in
   I have experience in teacher. Hit me up to check on availabilities for lessons as slots do tend to fill up pretty fast!'
+  )
+
+User.create!(
+  first_name: 'Jimi',
+  last_name: 'Hendrix',
+  email: 'kiss_theSky@gmail.com',
+  password: 'password',
+  username: 'skyKisser',
+  is_student: false,
+  instruments_played: "Guitar",
+  favotorite_genre: "Rock",
+  years_experience: 8,
+  about_me: 'Hi, im groovin and doin my thang. I once played Woodstock and everyone loved it. I set my guitar on fire. I am the inspiration for almost every guitarist of the last 50 years, so I guess you could say I am qualified to teach you you bucks a thing or two. If you want to jive then drop a line and lets make it happen'
   )
 
 # Top 3 Students
