@@ -8,7 +8,8 @@ class Api::V1::LessonsController < ApplicationController
         lessons << lesson
       end
     end
-    render json: lessons
+    shuffledLessons = lessons.shuffle
+    render json: shuffledLessons
   end
 
   def create
