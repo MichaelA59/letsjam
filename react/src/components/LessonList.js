@@ -79,6 +79,9 @@ class LessonList extends Component {
           </div>
         </section>
 
+        <div className='bumper-25'></div>
+        <div className='bumper-25'></div>
+
         <section>
           <div className='row'>
             <div className='columns small-12 small-centered text-center'>
