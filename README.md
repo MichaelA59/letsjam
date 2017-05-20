@@ -26,4 +26,4 @@ Terminal #1:
 Terminal #2:
   ```npm start```
   
-  Open Browser to `localhost:3000```
+  Open Browser to ```localhost:3000```
