@@ -9,9 +9,9 @@
 <section>
   <div class='container'>
     <div class='row'>
-
       <div class='columns small-12 medium-9'>
         <div class='profile-card'>
+
           <% if @user.profile_photo %>
             <div class='profile-card--img-wrapper'>
               <img class='profile-card--img' src="<%= @user.profile_photo %>" alt="User Profile Picture" />
@@ -32,9 +32,9 @@
             <% end %>
           </div>
 
-          <div class="clearfix"></div>
+          <!-- <div class="clearfix"></div> -->
           <div class="bumper-25"></div>
-          <hr style="width:75%;">
+          <hr style="width:50%;">
           <div class="bumper-25"></div>
 
           <div class="profile-card--additional-info">
@@ -63,7 +63,6 @@
               </div>
             <% end %>
           </div>
-
         </div>
       </div>
 
@@ -72,11 +71,13 @@
         <% if !@current_user.is_student? %>
           <%= link_to 'Add a lesson', new_lesson_path, class: '' %>
         <% end %>
+
         <div class="bumper-25"></div>
         <!-- React component for all of teacher created lessons -->
+        <!-- Will display teachers lessons if on teacher page
+        Will display students booked lessons if on their page -->
         <div id='teacher-lessons'></div>
       </div>
-
     </div>
   </div>
 </section>
