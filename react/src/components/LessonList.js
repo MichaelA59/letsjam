@@ -25,6 +25,19 @@ class LessonList extends Component {
   }
 
   render() {
+
+    let whatsLeft;
+
+    if (this.state.lessons.length == 1) {
+      whatsLeft = `${this.state.lessons.length + ' lesson left!'}`
+    }
+    else if (this.state.lessons.length > 1) {
+      whatsLeft = `${this.state.lessons.length + ' lessons left!'}`
+    }
+    else {
+      whatsLeft = "Sorry, all lessons are filled up!"
+    }
+
     let lessonsIndex = this.state.lessons.map(lesson => {
       return(
         <LessonIndex
@@ -49,6 +62,15 @@ class LessonList extends Component {
         <div className='bumper-25'></div>
         <div className='bumper-25'></div>
 
+        <div className='row'>
+          <div className='columns small-12 text-center'>
+            <h2>{whatsLeft}</h2>
+          </div>
+        </div>
+
+        <div className='bumper-25'></div>
+        <div className='bumper-25'></div>
+
         <section>
           <div className='container overflow-visible'>
             <div className='row small-up-1 medium-up-2 large-up-3'>
@@ -56,6 +78,9 @@ class LessonList extends Component {
             </div>
           </div>
         </section>
+
+        <div className='bumper-25'></div>
+        <div className='bumper-25'></div>
 
         <section>
           <div className='row'>

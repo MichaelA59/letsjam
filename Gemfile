@@ -11,7 +11,7 @@ gem 'devise'
 gem 'foundation-rails'
 gem "font-awesome-rails"
 gem "carrierwave"
-
+gem "fog"
 
 group :development do
   gem 'listen', '~> 3.0.5'
@@ -29,7 +29,7 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'coveralls', require: false
   gem 'faker'
-  gem 'faker'
+  gem "dotenv-rails"
 end
 
 group :production do
