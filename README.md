@@ -1,7 +1,3 @@
-![Build Status](https://codeship.com/projects/ca7c47b0-085b-0135-4b2a-7639116c9856/status?branch=master)
-![Code Climate](https://codeclimate.com/github/MichaelA59/letsjam.png)
-
-
 [Let's Jam](http://letsjamapp.herokuapp.com)
 
 
