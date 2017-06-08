@@ -4,7 +4,7 @@
 ### Overview
 Let's Jam was started as part of a capstone project at Launch Academy Coding Bootcamp in Boston, MA. Let's Jam is designed to be a type of meetup app for musicians, specifically Teachers and Students. 
 
-<center>![](https://media.giphy.com/media/TnXc5oZQjeTDO/giphy.gif)</center>
+![](https://media.giphy.com/media/TnXc5oZQjeTDO/giphy.gif)
 
 Again, this is a work in progress and as such new features will be implemented in the near future. Some of those technologies include
 
