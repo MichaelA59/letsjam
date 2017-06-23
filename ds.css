@@ -1,0 +1,110 @@
+/*-----------------------------------------------*/
+/*-----Scrolling Image Carousel by Divi Soup-----*/
+/*-----------------------------------------------*/
+/*Stops the browser creating a horizontal scrollbar*/
+.ds-carousel-section {
+    overflow: hidden;
+    max-height: 300px;
+}
+/*Reduces the section height on mobiles*/
+@media only screen and (max-width: 567px) {
+.ds-carousel-section {
+    max-height: 140px;
+    padding: 0;
+    }
+}
+/*Sets the width of the image modules and floats them so they are next to each other*/
+.ds-carousel-logo {
+    width: 20%;
+    float: left;
+}
+/*Sets the layout for the first row*/
+.ds-image-carousel-first {
+    width: 100% !important;
+    max-height: 200px;
+    height: 200px;
+    background: #fff;
+    animation: 15s first 1 linear;
+    animation-fill-mode: forwards;
+
+}
+/*Sets the layout for the second row*/
+.ds-image-carousel-second {
+    z-index: 2;
+    height: 200px;
+    background: #fff;
+    width: 100% !important;
+    float: left;
+    display: inline-block;
+    top: -200px;
+    animation: 30s second infinite linear;
+}
+/*Sets the layout for the third row*/
+.ds-image-carousel-third {
+    z-index: 1;
+    height: 200px;
+    background: #fff;
+    width: 100% !important;
+    float: left;
+    display: inline-block;
+    top: -400px;
+    animation: 30s third infinite linear;
+    animation-delay: 15s;
+    opacity: 0;
+}
+/*Animation for the continuous scrolling effect*/
+@keyframes first {
+  0% {
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    z-index: 3;
+  }
+  99.99% {
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    z-index: 3;
+  }
+  100% {
+    z-index: -1;
+  }
+}
+@keyframes second {
+  0% {
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+@keyframes third {
+  0.1% {
+    opacity: 0;
+  }
+  0.2% {
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+/*-----------------------------------------------*/
+/*---End Scrolling Image Carousel by Divi Soup---*/
+/*-----------------------------------------------*/
