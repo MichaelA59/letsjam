@@ -29,3 +29,6 @@ Terminal #2:
   ```npm start```
   
 Open Browser to ```localhost:3000```
+
+### ER Diagram
+![](http://i.imgur.com/q1NIjGD.png)
